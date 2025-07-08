@@ -28,13 +28,13 @@ App Base is a simple Android application demonstrating integration with Firebase
 
 ## 4. Screenshots
 ### Home Screen with 'Anonymous Sign In' button
-![Home Screen](screenshots/home_screen.png)
-
-### Dummy Sign-In Toast
-![Sign-In Toast](screenshots/signin_toast.png)
+<p align="center">
+  <img src="screenshots/home_screen.png" alt="Screenshot 1" width="200" style="margin-right: 10px;"/>
+  <img src="screenshots/signin_toast.png" alt="Screenshot 2" width="200"/>
+</p>
 
 ### Log Test Event
-![Log Test Event](screenshots/log_test_event.png)
+![Log Test Event](screenshots/log_event.png)
 
 ## 5. How to Run the Application
 ### 5.1. Prerequisites
