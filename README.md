@@ -27,7 +27,7 @@ App Base is a simple Android application demonstrating integration with Firebase
 - **fragment_home.xml:** Contains a centered TextView with the message "Welcome to App Base!" and a button labeled 'Anonymous Sign In' below it.
 
 ## 4. Screenshots
-### Home Screen with 'Anonymous Sign In' button
+### Home Screen with 'Anonymous Sign In' button And Dummy Sign-in Toast
 <p align="center">
   <img src="screenshots/home_screen.png" alt="Screenshot 1" width="200" style="margin-right: 10px;"/>
   <img src="screenshots/signin_toast.png" alt="Screenshot 2" width="200"/>
