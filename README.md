@@ -37,13 +37,13 @@ A starter Android app using Kotlin, AndroidX, ViewBinding, Navigation Component,
 </div>
 
 <div style="text-align: center;">
-  <img src="screenshots/screen3.png" width="1080" alt="Google Sign-in Screen"/>
-  <img src="screenshots/screen4.png" width="1080" alt="User Info after Successful Google Sign-in"/>
+  <img src="screenshots/screen3.png" width="200" alt="Google Sign-in Screen"/>
+  <img src="screenshots/screen4.png" width="200" alt="User Info after Successful Google Sign-in"/>
 </div>
 
 <div style="text-align: center;">
-  <img src="screenshots/screen5.png" width="1080" alt="User profile with Sign-out button"/>
-  <img src="screenshots/screen6.png" width="1080" alt="Google account removed after Sign-out"/>
+  <img src="screenshots/screen5.png" width="200" alt="User profile with Sign-out button"/>
+  <img src="screenshots/screen6.png" width="200" alt="Google account removed after Sign-out"/>
 </div>
 
 
