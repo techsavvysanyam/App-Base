@@ -4,9 +4,12 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.example.appbase.databinding.FragmentHomeBinding
 import com.google.firebase.analytics.FirebaseAnalytics
+import com.google.firebase.auth.FirebaseAuth
 
 class HomeFragment : Fragment() {
     private var _binding: FragmentHomeBinding? = null
@@ -16,26 +19,45 @@ class HomeFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
-        //For direct call after the app launch
-//        FirebaseTest.dummySignIn { success ->
-//            if (success) {
-//                Toast.makeText(context, "Dummy sign-in successful!", Toast.LENGTH_SHORT).show()
-//            } else {
-//                Toast.makeText(context, "Dummy sign-in failed.", Toast.LENGTH_SHORT).show()
 
-        // Set up click listener for anonymous sign in button..
+        // Set up click listeners
         binding.buttonAnonymousSignIn.setOnClickListener {
             val analytics = FirebaseAnalytics.getInstance(requireContext())
             FirebaseTest.logTestEvent(analytics)
             FirebaseTest.dummySignIn { success ->
                 if (success) {
-                    android.widget.Toast.makeText(requireContext(), "Dummy sign-in successful!", android.widget.Toast.LENGTH_SHORT).show()
+                    Toast.makeText(requireContext(), "Dummy sign-in successful!", Toast.LENGTH_SHORT).show()
                 } else {
-                    android.widget.Toast.makeText(requireContext(), "Dummy sign-in failed!", android.widget.Toast.LENGTH_SHORT).show()
+                    Toast.makeText(requireContext(), "Dummy sign-in failed!", Toast.LENGTH_SHORT).show()
                 }
             }
         }
+
+        binding.buttonGoToSignIn.setOnClickListener {
+            findNavController().navigate(R.id.signInFragment)
+        }
+
+        // Update user info display
+        updateUserInfo()
+
         return binding.root
+    }
+
+    private fun updateUserInfo() {
+        val currentUser = FirebaseAuth.getInstance().currentUser
+        if (currentUser != null) {
+            val userInfo = "Name: ${currentUser.displayName ?: "Unknown"}\n" +
+                    "Email: ${currentUser.email ?: "No email"}\n" +
+                    "Provider: ${currentUser.providerData.firstOrNull()?.providerId ?: "Unknown"}"
+            binding.textUserInfo.text = userInfo
+        } else {
+            binding.textUserInfo.text = "Not signed in"
+        }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        updateUserInfo()
     }
 
     override fun onDestroyView() {
@@ -43,5 +65,3 @@ class HomeFragment : Fragment() {
         _binding = null
     }
 }
-
-

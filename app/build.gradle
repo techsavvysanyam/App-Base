@@ -30,13 +30,16 @@ android {
 }
 
 dependencies {
-    implementation 'androidx.core:core-ktx:1.16.0'
-    implementation 'androidx.appcompat:appcompat:1.7.1'
-    implementation 'com.google.android.material:material:1.12.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.2.1'
-    implementation 'androidx.navigation:navigation-fragment-ktx:2.9.1'
-    implementation 'androidx.navigation:navigation-ui-ktx:2.9.1'
-    implementation 'com.google.firebase:firebase-auth-ktx:23.2.1'
-    implementation 'com.google.firebase:firebase-messaging-ktx:24.1.2'
-    implementation 'com.google.android.gms:play-services-measurement-api:22.5.0'
+    implementation libs.androidx.core.ktx
+    implementation libs.androidx.appcompat
+    implementation libs.material
+    implementation libs.androidx.constraintlayout
+    implementation libs.androidx.cardview
+    implementation libs.androidx.navigation.fragment.ktx
+    implementation libs.androidx.navigation.ui.ktx
+    implementation libs.firebase.auth.ktx
+    implementation libs.firebase.messaging.ktx
+    implementation libs.glide
+    implementation libs.play.services.auth
+    implementation libs.play.services.measurement.api
 } 

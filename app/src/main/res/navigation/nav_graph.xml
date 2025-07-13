@@ -11,4 +11,10 @@
         android:label="Home"
         tools:layout="@layout/fragment_home" />
 
+    <fragment
+        android:id="@+id/signInFragment"
+        android:name="com.example.appbase.SignInFragment"
+        android:label="Sign In"
+        tools:layout="@layout/fragment_sign_in" />
+
 </navigation>
