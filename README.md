@@ -29,14 +29,24 @@ A starter Android app using Kotlin, AndroidX, ViewBinding, Navigation Component,
 - Google Play Services Auth
 - Glide (for image loading)
 
-## Screenshots
+## 📸 Screenshots
 
-<div align="center"> <img src="screenshots/screen1.png" width="200" alt="Home Screen"/> 
-<img src="screenshots/screen2.png" width="200" alt="Dummy Anonymous Sign-in"/> </div> <div align="center"> 
-<img src="screenshots/screen3.png" width="200" alt="Google Sign-in Screen"/> 
-<img src="screenshots/screen4.png" width="200" alt="User Info after Successful Google Sign-in"/> </div> <div align="center"> 
-<img src="screenshots/screen5.png" width="200" alt="User profile with Sign-out button"/> 
-<img src="screenshots/screen6.png" width="200" alt="Google account removed after Sign-out "/> </div>
+<div style="text-align: center;">
+  <img src="screenshots/screen1.png" width="1080" alt="Home Screen"/>
+  <img src="screenshots/screen2.png" width="1080" alt="Dummy Anonymous Sign-in"/>
+</div>
+
+<div style="text-align: center;">
+  <img src="screenshots/screen3.png" width="1080" alt="Google Sign-in Screen"/>
+  <img src="screenshots/screen4.png" width="1080" alt="User Info after Successful Google Sign-in"/>
+</div>
+
+<div style="text-align: center;">
+  <img src="screenshots/screen5.png" width="1080" alt="User profile with Sign-out button"/>
+  <img src="screenshots/screen6.png" width="1080" alt="Google account removed after Sign-out"/>
+</div>
+
+
 
 ## Usage
 
