@@ -32,8 +32,8 @@ A starter Android app using Kotlin, AndroidX, ViewBinding, Navigation Component,
 ## 📸 Screenshots
 
 <div style="text-align: center;">
-  <img src="screenshots/screen1.png" width="1080" alt="Home Screen"/>
-  <img src="screenshots/screen2.png" width="1080" alt="Dummy Anonymous Sign-in"/>
+  <img src="screenshots/screen1.png" width="200" alt="Home Screen"/>
+  <img src="screenshots/screen2.png" width="200" alt="Dummy Anonymous Sign-in"/>
 </div>
 
 <div style="text-align: center;">
