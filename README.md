@@ -1,76 +1,87 @@
-# App Base
+# App Base – High Level Documentation
 
-A starter Android app using Kotlin, AndroidX, ViewBinding, Navigation Component, and Firebase (Auth + FCM) with Google Sign-In integration.
+## 1. Project Overview
+App Base is a simple Android application demonstrating integration with Firebase services, including Analytics and Authentication. The app is structured using modern Android development practices, such as Fragments, View Binding, and Navigation Components. It serves as a template or starting point for more complex applications that require Firebase integration.
 
-## Setup
+- **Platform:** Android
+- **Language:** Kotlin
+- **Main Libraries/Frameworks:** AndroidX, Firebase (Analytics, Auth), View Binding, Navigation Component
 
-1. Open this project in Android Studio Meerkat 2024.3.2 Patch 1 or newer.
-2. Download your `google-services.json` from Firebase Console and place it in `app/`.
-3. Enable Google Sign-In in Firebase Console:
-   - Go to Firebase Console > Authentication > Sign-in method
-   - Enable Google Sign-In provider
-   - Add your app's SHA-1 fingerprint to the project settings
-4. Sync Gradle and run the app.
+## 2. Key Features
+- **Firebase Analytics Integration:** Logs a test event to Firebase Analytics when the user clicks the 'Anonymous Sign In' button.
+- **Firebase Authentication:** Performs a dummy anonymous sign-in to Firebase Auth and displays the result to the user, only when the 'Anonymous Sign In' button is clicked.
+- **Modern Android Architecture:** Uses Fragments, View Binding, and Navigation Component for clean code organization.
+- **Simple UI:** Displays a welcome message and a button for anonymous sign-in on the Home screen.
 
-## Features
-- Single-Activity architecture with Navigation Component
-- Sign-In screen with Google authentication
-- User profile display with photo, name, and email
-- Sign-out functionality
-- Firebase Authentication and Cloud Messaging (FCM) integrated
-- Anonymous authentication support
+## 3. Architecture Overview
+### 3.1. App Structure
+- **HomeFragment:** The main UI component, responsible for displaying the welcome message and handling the 'Anonymous Sign In' button click, which triggers Firebase test actions.
+- **FirebaseTest (object):** Contains utility functions for logging analytics events and performing dummy sign-in.
+- **Navigation:** Managed via `nav_graph.xml`, with HomeFragment as the start destination.
 
-## Dependencies
-- AndroidX
-- Kotlin
-- Navigation Component
-- Firebase Auth
-- Firebase Cloud Messaging
-- Google Play Services Auth
-- Glide (for image loading)
+### 3.2. Firebase Integration
+- **Analytics:** Logs a custom event (`test_event`) with a test key-value pair when the user clicks the 'Anonymous Sign In' button.
+- **Auth:** Signs in the user anonymously and provides feedback via a Toast message, only when the button is clicked.
 
-## 📸 Screenshots
+### 3.3. UI Layout
+- **fragment_home.xml:** Contains a centered TextView with the message "Welcome to App Base!" and a button labeled 'Anonymous Sign In' below it.
 
-<div style="text-align: center;">
-  <img src="screenshots/screen1.png" width="1080" alt="Home Screen"/>
-  <img src="screenshots/screen2.png" width="1080" alt="Dummy Anonymous Sign-in"/>
-</div>
+## 4. Screenshots
+### Home Screen with 'Anonymous Sign In' button And Dummy Sign-in Toast
+<p align="center">
+  <img src="screenshots/home_screen.png" alt="Screenshot 1" width="200" style="margin-right: 10px;"/>
+  <img src="screenshots/signin_toast.png" alt="Screenshot 2" width="200"/>
+</p>
 
-<div style="text-align: center;">
-  <img src="screenshots/screen3.png" width="1080" alt="Google Sign-in Screen"/>
-  <img src="screenshots/screen4.png" width="1080" alt="User Info after Successful Google Sign-in"/>
-</div>
+### Log Test Event
+![Log Test Event](screenshots/log_event.png)
 
-<div style="text-align: center;">
-  <img src="screenshots/screen5.png" width="1080" alt="User profile with Sign-out button"/>
-  <img src="screenshots/screen6.png" width="1080" alt="Google account removed after Sign-out"/>
-</div>
+## 5. How to Run the Application
+### 5.1. Prerequisites
+- Android Studio (latest version recommended)
+- Android SDK
+- A valid `google-services.json` file from your Firebase Console (replace the placeholder in `app/`)
 
+### 5.2. Setup Steps
+1. **Clone the Repository:**
+   ```sh
+   git clone https://github.com/techsavvysanyam/App-Base
+   ```
+2. **Open in Android Studio:**
+   Open the project folder in Android Studio.
+3. **Add Firebase Configuration:**
+   Replace the placeholder `google-services.json` in `app/` with your actual Firebase config file.
+4. **Build the Project:**
+   Let Gradle sync and build the project.
+5. **Run the App:**
+   Select an emulator or connected device and click "Run".
 
+## 6. Code Structure
+```
+App Base/
+├── app/
+│   ├── src/
+│   │   ├── main/
+│   │   │   ├── java/com/example/appbase/
+│   │   │   │   ├── HomeFragment.kt
+│   │   │   │   └── FirebaseTest.kt
+│   │   │   ├── res/
+│   │   │   │   ├── layout/fragment_home.xml
+│   │   │   │   └── navigation/nav_graph.xml
+│   │   │   └── ...
+│   ├── google-services.json (replace with your own)
+├── build.gradle
+├── settings.gradle
+└── ...
+```
 
-## Usage
+## 7. Future Enhancements
+- Add more screens and navigation destinations.
+- Implement user profile and authentication flows.
+- Integrate additional Firebase services (e.g., Firestore, Cloud Messaging).
+- Improve UI/UX with more interactive elements.
 
-### Google Sign-In Setup
-1. **Firebase Console Setup:**
-   - Enable Google Sign-In in Firebase Console
-   - Add your app's SHA-1 fingerprint to project settings
-   - Download updated `google-services.json`
+## 8. References
+- [Firebase for Android Documentation](https://firebase.google.com/docs/android/setup)
+- [Android Developer Guide](https://developer.android.com/guide)
 
-2. **SHA-1 Fingerprint:**
-   - For debug: `keytool -list -v -keystore ~/.android/debug.keystore -alias androiddebugkey -storepass android -keypass android`
-   - For release: Use your release keystore
-
-3. **Testing:**
-   - Run the app
-   - Tap "Sign in with Google" button
-   - Complete Google Sign-In flow
-   - View user profile information
-   - Use "Sign Out" to log out
-
-### Navigation
-- **Sign-In Screen:** Default start destination with Google Sign-In
-- **Home Screen:** Shows current user info and navigation options (which includes Anonymous Sign-in and Go to Sign-in Buttons)
-
----
-
-**Note:** This project is set up for easy extension and task experimentation. 
