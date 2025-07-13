@@ -5,4 +5,6 @@
     <string name="not_signed_in">Not signed in</string>
     <string name="anonymous_sign_in">Anonymous Sign In</string>
     <string name="go_to_sign_in">Go to Sign In</string>
+    <string name="sign_in_to_continue">Sign in to continue</string>
+    <string name="sign_out">Sign Out</string>
 </resources> 
