@@ -7,4 +7,8 @@
     <string name="go_to_sign_in">Go to Sign In</string>
     <string name="sign_in_to_continue">Sign in to continue</string>
     <string name="sign_out">Sign Out</string>
+    <string name="fcm_notification_channel">FCM Notifications</string>
+    <string name="fcm_notification_title">FCM Message</string>
+    <string name="fcm_notification_body">You have received a new message.</string>
+    <string name="fcm_log">FCM Log:</string>
 </resources> 
