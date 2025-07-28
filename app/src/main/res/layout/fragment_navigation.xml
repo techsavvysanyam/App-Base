@@ -13,12 +13,12 @@
         android:layout_height="120dp"
         android:src="@drawable/ic_navigation"
         android:contentDescription="@string/navigation_icon"
-        android:tint="?attr/colorPrimary"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toTopOf="@id/text_navigation_title"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintVertical_chainStyle="packed" />
+        app:layout_constraintVertical_chainStyle="packed"
+        app:tint="?attr/colorPrimary" />
 
     <TextView
         android:id="@+id/text_navigation_title"
