@@ -59,4 +59,5 @@
     <string name="error_generic">Something went wrong. Please try again.</string>
     <string name="error_network">Check your internet connection and try again.</string>
     <string name="error_permission">Permission required to access this feature.</string>
+    <string name="go_to_home">Go to Home</string>
 </resources> 

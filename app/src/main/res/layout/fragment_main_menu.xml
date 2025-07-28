@@ -66,8 +66,7 @@
                     android:layout_weight="1"
                     android:orientation="vertical"
                     android:paddingStart="20dp"
-                    android:gravity="center_vertical"
-                    tools:ignore="RtlSymmetry">
+                    android:gravity="center_vertical">
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -111,8 +110,7 @@
                     android:layout_weight="1"
                     android:orientation="vertical"
                     android:paddingStart="20dp"
-                    android:gravity="center_vertical"
-                    tools:ignore="RtlSymmetry">
+                    android:gravity="center_vertical">
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -155,8 +153,7 @@
                     android:layout_weight="1"
                     android:orientation="vertical"
                     android:paddingStart="20dp"
-                    android:gravity="center_vertical"
-                    tools:ignore="RtlSymmetry">
+                    android:gravity="center_vertical">
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -199,8 +196,7 @@
                     android:layout_weight="1"
                     android:orientation="vertical"
                     android:paddingStart="20dp"
-                    android:gravity="center_vertical"
-                    tools:ignore="RtlSymmetry">
+                    android:gravity="center_vertical">
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"

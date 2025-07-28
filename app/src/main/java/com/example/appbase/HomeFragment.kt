@@ -1,3 +1,5 @@
+@file:Suppress("DEPRECATION")
+
 package com.example.appbase
 
 import android.annotation.SuppressLint

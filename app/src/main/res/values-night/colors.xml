@@ -16,18 +16,16 @@
 
     <!-- Background Colors (Dark Theme) -->
     <color name="background_primary">#0f172a</color>
-    <color name="card_background">#1e293b</color>
-    <color name="card_background_secondary">#334155</color>
     <color name="background_primary_dark">#0f172a</color>
+    <color name="card_background">#1e293b</color>
     <color name="card_background_dark">#1e293b</color>
-
+    <color name="card_background_secondary">#334155</color>
     <!-- Text Colors (Dark Theme) -->
     <color name="text_primary">#f1f5f9</color>
-    <color name="text_secondary">#cbd5e1</color>
-    <color name="text_tertiary">#94a3b8</color>
     <color name="text_primary_dark">#f1f5f9</color>
+    <color name="text_secondary">#cbd5e1</color>
     <color name="text_secondary_dark">#cbd5e1</color>
-
+    <color name="text_tertiary">#94a3b8</color>
     <!-- Status Colors (Dark Theme) -->
     <color name="success">#34d399</color>
     <color name="warning">#fbbf24</color>
@@ -41,11 +39,10 @@
 
     <!-- Surface Colors (Dark Theme) -->
     <color name="surface_primary">#1e293b</color>
+    <color name="surface_primary_dark">#1e293b</color>
     <color name="surface_secondary">#334155</color>
     <color name="surface_tertiary">#475569</color>
-    <color name="surface_primary_dark">#1e293b</color>
     <color name="surface_tertiary_dark">#475569</color>
-
     <!-- Ripple and Selection (Dark Theme) -->
     <color name="ripple_color">#1a6366f1</color>
     <color name="selection_color">#0d6366f1</color>

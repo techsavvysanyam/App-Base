@@ -35,23 +35,18 @@ A starter Android app using Kotlin, AndroidX, ViewBinding, Navigation Component,
 ## 📸 Screenshots
 
 <div style="text-align: center;">
-  <img src="screenshots/screen1.png" width="200" alt="Home Screen"/>
-  <img src="screenshots/screen2.png" width="200" alt="Dummy Anonymous Sign-in"/>
+  <img src="screenshots/screen1.jpg" width="200" alt="Home Screen"/>
+  <img src="screenshots/screen2.jpg" width="200" alt="Dummy Anonymous Sign-in"/>
 </div>
 
 <div style="text-align: center;">
-  <img src="screenshots/screen3.png" width="200" alt="Google Sign-in Screen"/>
-  <img src="screenshots/screen4.png" width="200" alt="User Info after Successful Google Sign-in"/>
+  <img src="screenshots/screen3.jpg" width="200" alt="Google Sign-in Successful with User Info Shown"/>
+  <img src="screenshots/screen4.jpg" width="200" alt="FCM Notification Message Test"/>
 </div>
 
 <div style="text-align: center;">
-  <img src="screenshots/screen5.png" width="200" alt="User profile with Sign-out button"/>
-  <img src="screenshots/screen6.png" width="200" alt="Google account removed after Sign-out"/>
-</div>
-
-<div style="text-align: center;">
-  <img src="screenshots/screen7.png" width="200" alt="Received notification from FCM (Foreground)"/>
-  <img src="screenshots/screen8.png" width="200" alt="Received notification from FCM (Background/ killed)"/>
+  <img src="screenshots/screen5.jpg" width="200" alt="Main Menu (Includes 4 - Features"/>
+  <img src="screenshots/screen6.jpg" width="200" alt="Sample Fragment A/c to Respected Feature"/>
 </div>
 
 ## Usage

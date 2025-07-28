@@ -35,9 +35,7 @@ class MainActivity : AppCompatActivity() {
         FirebaseMessaging.getInstance().token.addOnCompleteListener { task ->
             if (task.isSuccessful) {
                 val token = task.result
-                // TODO: Send token to your server securely if needed
-                // Do not log or display tokens in production
-                Log.d("FCM_TOKEN", "Token retrieved successfully")
+                Log.d("FCM_TOKEN", token)
             }
         }
         // Register receiver for FCM messages
