@@ -14,10 +14,35 @@ android {
         targetSdk 34
         versionCode 1
         versionName '1.0'
+        
+        // Load API keys from local.properties (not committed to version control)
+        Properties properties = new Properties()
+        if (project.rootProject.file('local.properties').exists()) {
+            properties.load(project.rootProject.file('local.properties').newDataInputStream())
+        }
+        
+        // Add build config fields for API keys
+        buildConfigField "String", "FIREBASE_API_KEY", "\"${properties.getProperty('FIREBASE_API_KEY', '')}\""
+        buildConfigField "String", "MAPS_API_KEY", "\"${properties.getProperty('MAPS_API_KEY', '')}\""
+        buildConfigField "String", "VISION_API_KEY", "\"${properties.getProperty('VISION_API_KEY', '')}\""
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro', 'proguard-rules-security.pro'
+            debuggable false
+        }
+        debug {
+            minifyEnabled false
+            debuggable true
+        }
     }
 
     buildFeatures {
         viewBinding true
+        buildConfig true
     }
 
     compileOptions {
@@ -42,4 +67,4 @@ dependencies {
     implementation libs.glide
     implementation libs.play.services.auth
     implementation libs.play.services.measurement.api
-} 
+}

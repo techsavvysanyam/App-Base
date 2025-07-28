@@ -31,12 +31,13 @@ class MainActivity : AppCompatActivity() {
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         val navController = navHostFragment.navController
         setupActionBarWithNavController(navController)
-        // Log and display FCM token
+        // Initialize FCM token (removed logging for security)
         FirebaseMessaging.getInstance().token.addOnCompleteListener { task ->
             if (task.isSuccessful) {
                 val token = task.result
-                Log.d("FCM_TOKEN", token)
-                Toast.makeText(this, "FCM Token: $token", Toast.LENGTH_LONG).show()
+                // TODO: Send token to your server securely if needed
+                // Do not log or display tokens in production
+                Log.d("FCM_TOKEN", "Token retrieved successfully")
             }
         }
         // Register receiver for FCM messages

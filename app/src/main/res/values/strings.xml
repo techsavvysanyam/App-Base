@@ -15,7 +15,7 @@
 
     <!-- Main Menu -->
     <string name="main_menu_title">Main Menu</string>
-    <string name="main_menu_subtitle">Select a feature to get started</string>
+    <string name="main_menu_subtitle">Identify. Detect. Extract. Navigate.</string>
 
     <!-- Feature Names -->
     <string name="face_recognition">Face Recognition</string>

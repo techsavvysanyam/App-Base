@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true"
-    android:background="@drawable/gradient_background"
+    android:background="?android:colorBackground"
     android:scrollbars="none"
     tools:context=".MainMenuFragment">
 
@@ -23,212 +23,199 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:gravity="center_horizontal"
-            android:layout_marginBottom="40dp">
+            android:layout_marginBottom="24dp"
+            android:paddingTop="32dp"
+            android:paddingBottom="16dp">
 
             <TextView
                 android:id="@+id/text_main_menu_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/main_menu_title"
-                android:textSize="36sp"
-                android:textStyle="bold"
-                android:textColor="@color/white"
-                android:letterSpacing="0.02"
-                android:fontFamily="@font/font"
-                android:elevation="2dp"
-                android:shadowColor="@color/black"
-                android:shadowDx="0"
-                android:shadowDy="2"
-                android:shadowRadius="4" />
-
-            <TextView
-                android:id="@+id/text_main_menu_subtitle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
                 android:text="@string/main_menu_subtitle"
-                android:textSize="16sp"
-                android:textColor="@color/white"
-                android:alpha="0.85"
-                android:layout_marginTop="8dp"
-                android:letterSpacing="0.01"
-                android:fontFamily="@font/font"
-                android:gravity="center" />
+                android:textSize="20sp"
+                android:textAppearance="?attr/textAppearanceHeadline5"
+                android:textColor="?attr/colorPrimary"
+                android:textStyle="bold" />
         </LinearLayout>
 
-        <LinearLayout
+        <com.google.android.material.card.MaterialCardView
             android:id="@+id/layout_face_recognition"
+            style="@style/Widget.AppBase.CardView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:background="@drawable/selector_button_background"
-            android:layout_marginBottom="20dp"
-            android:padding="20dp"
-            android:gravity="center_vertical"
+            android:layout_marginBottom="16dp"
             android:clickable="true"
             android:focusable="true">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="16dp"
+                android:gravity="center_vertical">
 
             <ImageView
-                android:layout_width="56dp"
-                android:layout_height="56dp"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
                 android:src="@drawable/ic_face_recognition"
                 android:contentDescription="@string/face_recognition_icon"
                 android:layout_gravity="center_vertical"
-                app:tint="@color/accent_color" />
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="vertical"
-                android:paddingStart="20dp"
-                android:gravity="center_vertical"
-                tools:ignore="RtlSymmetry">
-                <TextView
-                    android:layout_width="wrap_content"
+                app:tint="?attr/colorPrimary" />
+                <LinearLayout
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:text="@string/face_recognition"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:textColor="@color/text_primary"
-                    android:fontFamily="@font/font" />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/face_recognition_description"
-                    android:textSize="14sp"
-                    android:textColor="@color/text_secondary"
-                    android:fontFamily="@font/font" />
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:paddingStart="20dp"
+                    android:gravity="center_vertical"
+                    tools:ignore="RtlSymmetry">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/face_recognition"
+                        android:textSize="18sp"
+                        android:textColor="?attr/colorOnSurface" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/face_recognition_description"
+                        android:textSize="12sp"
+                        android:textColor="?attr/colorOnSurfaceVariant" />
+                </LinearLayout>
             </LinearLayout>
-        </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
 
-        <LinearLayout
+        <com.google.android.material.card.MaterialCardView
             android:id="@+id/layout_object_detection"
+            style="@style/Widget.AppBase.CardView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:background="@drawable/selector_button_background"
-            android:layout_marginBottom="20dp"
-            android:padding="20dp"
-            android:gravity="center_vertical"
+            android:layout_marginBottom="16dp"
             android:clickable="true"
             android:focusable="true">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="16dp"
+                android:gravity="center_vertical">
             <ImageView
-                android:layout_width="56dp"
-                android:layout_height="56dp"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
                 android:src="@drawable/ic_object_detection"
                 android:contentDescription="@string/object_detection_icon"
                 android:layout_gravity="center_vertical"
-                app:tint="@color/accent_color" />
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="vertical"
-                android:paddingStart="20dp"
-                android:gravity="center_vertical"
-                tools:ignore="RtlSymmetry">
-                <TextView
-                    android:layout_width="wrap_content"
+                app:tint="?attr/colorPrimary" />
+                <LinearLayout
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:text="@string/object_detection"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:textColor="@color/text_primary"
-                    android:fontFamily="@font/font" />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/object_detection_description"
-                    android:textSize="14sp"
-                    android:textColor="@color/text_secondary"
-                    android:fontFamily="@font/font" />
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:paddingStart="20dp"
+                    android:gravity="center_vertical"
+                    tools:ignore="RtlSymmetry">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/object_detection"
+                        android:textSize="18sp"
+                        android:textColor="?attr/colorOnSurface" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/object_detection_description"
+                        android:textSize="12sp"
+                        android:textColor="?attr/colorOnSurfaceVariant" />
+                </LinearLayout>
             </LinearLayout>
-        </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
 
-        <LinearLayout
+        <com.google.android.material.card.MaterialCardView
             android:id="@+id/layout_ocr"
+            style="@style/Widget.AppBase.CardView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:background="@drawable/selector_button_background"
-            android:layout_marginBottom="20dp"
-            android:padding="20dp"
-            android:gravity="center_vertical"
+            android:layout_marginBottom="16dp"
             android:clickable="true"
             android:focusable="true">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="16dp"
+                android:gravity="center_vertical">
             <ImageView
-                android:layout_width="56dp"
-                android:layout_height="56dp"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
                 android:src="@drawable/ic_ocr"
                 android:contentDescription="@string/ocr_icon"
-                android:layout_gravity="center_vertical" app:tint="@color/accent_color" />
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="vertical"
-                android:paddingStart="20dp"
-                android:gravity="center_vertical"
-                tools:ignore="RtlSymmetry">
-                <TextView
-                    android:layout_width="wrap_content"
+                android:layout_gravity="center_vertical" app:tint="?attr/colorPrimary" />
+                <LinearLayout
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:text="@string/ocr"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:textColor="@color/text_primary"
-                    android:fontFamily="@font/font" />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/ocr_description"
-                    android:textSize="14sp"
-                    android:textColor="@color/text_secondary"
-                    android:fontFamily="@font/font" />
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:paddingStart="20dp"
+                    android:gravity="center_vertical"
+                    tools:ignore="RtlSymmetry">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/ocr"
+                        android:textSize="18sp"
+                        android:textColor="?attr/colorOnSurface" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/ocr_description"
+                        android:textSize="12sp"
+                        android:textColor="?attr/colorOnSurfaceVariant" />
+                </LinearLayout>
             </LinearLayout>
-        </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
 
-        <LinearLayout
+        <com.google.android.material.card.MaterialCardView
             android:id="@+id/layout_navigation"
+            style="@style/Widget.AppBase.CardView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:background="@drawable/selector_button_background"
-            android:layout_marginBottom="20dp"
-            android:padding="20dp"
-            android:gravity="center_vertical"
+            android:layout_marginBottom="16dp"
             android:clickable="true"
             android:focusable="true">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="16dp"
+                android:gravity="center_vertical">
             <ImageView
-                android:layout_width="56dp"
-                android:layout_height="56dp"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
                 android:src="@drawable/ic_navigation"
                 android:contentDescription="@string/navigation_icon"
-                android:layout_gravity="center_vertical" app:tint="@color/accent_color" />
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:orientation="vertical"
-                android:paddingStart="20dp"
-                android:gravity="center_vertical"
-                tools:ignore="RtlSymmetry">
-                <TextView
-                    android:layout_width="wrap_content"
+                android:layout_gravity="center_vertical" app:tint="?attr/colorPrimary" />
+                <LinearLayout
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:text="@string/navigation"
-                    android:textSize="18sp"
-                    android:textStyle="bold"
-                    android:textColor="@color/text_primary"
-                    android:fontFamily="@font/font" />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/navigation_description"
-                    android:textSize="14sp"
-                    android:textColor="@color/text_secondary"
-                    android:fontFamily="@font/font" />
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:paddingStart="20dp"
+                    android:gravity="center_vertical"
+                    tools:ignore="RtlSymmetry">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/navigation"
+                        android:textSize="18sp"
+                        android:textColor="?attr/colorOnSurface" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/navigation_description"
+                        android:textSize="12sp"
+                        android:textColor="?attr/colorOnSurfaceVariant" />
+                </LinearLayout>
             </LinearLayout>
-        </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
 
     </LinearLayout>
 </ScrollView>
