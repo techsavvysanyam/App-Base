@@ -5,10 +5,58 @@
     <string name="not_signed_in">Not signed in</string>
     <string name="anonymous_sign_in">Anonymous Sign In</string>
     <string name="go_to_sign_in">Go to Sign In</string>
+    <string name="go_to_main_menu">Go to Main Menu</string>
     <string name="sign_in_to_continue">Sign in to continue</string>
     <string name="sign_out">Sign Out</string>
     <string name="fcm_notification_channel">FCM Notifications</string>
     <string name="fcm_notification_title">FCM Message</string>
     <string name="fcm_notification_body">You have received a new message.</string>
     <string name="fcm_log">FCM Log:</string>
+
+    <!-- Main Menu -->
+    <string name="main_menu_title">Main Menu</string>
+    <string name="main_menu_subtitle">Select a feature to get started</string>
+
+    <!-- Feature Names -->
+    <string name="face_recognition">Face Recognition</string>
+    <string name="object_detection">Object Detection</string>
+    <string name="ocr">OCR</string>
+    <string name="navigation">Navigation</string>
+
+    <!-- Feature Descriptions -->
+    <string name="face_recognition_description">Identify and analyze faces</string>
+    <string name="object_detection_description">Detect objects in images</string>
+    <string name="ocr_description">Extract text from images</string>
+    <string name="navigation_description">Navigate with GPS</string>
+
+    <!-- Icon Content Descriptions -->
+    <string name="face_recognition_icon">Face Recognition Icon</string>
+    <string name="object_detection_icon">Object Detection Icon</string>
+    <string name="ocr_icon">OCR Icon</string>
+    <string name="navigation_icon">Navigation Icon</string>
+
+    <!-- Feature Fragment Titles -->
+    <string name="face_recognition_title">Face Recognition</string>
+    <string name="object_detection_title">Object Detection</string>
+    <string name="ocr_title">Text Reading (OCR)</string>
+    <string name="navigation_title">Navigation</string>
+
+    <!-- Placeholder Messages -->
+    <string name="face_recognition_placeholder">Face Recognition feature coming soon!</string>
+    <string name="object_detection_placeholder">Object Detection feature coming soon!</string>
+    <string name="ocr_placeholder">OCR feature coming soon!</string>
+    <string name="navigation_placeholder">Navigation feature coming soon!</string>
+
+    <!-- Common Actions -->
+    <string name="try_now">Try Now</string>
+    <string name="learn_more">Learn More</string>
+    <string name="get_started">Get Started</string>
+    <string name="back">Back</string>
+    <string name="next">Next</string>
+    <string name="done">Done</string>
+
+    <!-- Error Messages -->
+    <string name="error_generic">Something went wrong. Please try again.</string>
+    <string name="error_network">Check your internet connection and try again.</string>
+    <string name="error_permission">Permission required to access this feature.</string>
 </resources> 

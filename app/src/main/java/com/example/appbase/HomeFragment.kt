@@ -38,6 +38,10 @@ class HomeFragment : Fragment() {
             findNavController().navigate(R.id.signInFragment)
         }
 
+        binding.buttonGoToMainMenu.setOnClickListener {
+            findNavController().navigate(R.id.action_homeFragment_to_mainMenuFragment)
+        }
+
         // Update user info display
         updateUserInfo()
 

@@ -14,11 +14,14 @@ A starter Android app using Kotlin, AndroidX, ViewBinding, Navigation Component,
 
 ## Features
 - Single-Activity architecture with Navigation Component
+- Main Menu with four core feature options (Face Recognition, Object Detection, OCR, Navigation)
 - Sign-In screen with Google authentication
 - User profile display with photo, name, and email
 - Sign-out functionality
 - Firebase Authentication and Cloud Messaging (FCM) integrated
 - Anonymous authentication support
+- Material Design UI components
+- Responsive layout for different screen sizes
 
 ## Dependencies
 - AndroidX
@@ -71,8 +74,34 @@ A starter Android app using Kotlin, AndroidX, ViewBinding, Navigation Component,
    - Use "Sign Out" to log out
 
 ### Navigation
-- **Sign-In Screen:** Default start destination with Google Sign-In
+- **Main Menu:** Default start destination with four core feature options
 - **Home Screen:** Shows current user info and navigation options (which includes Anonymous Sign-in and Go to Sign-in Buttons)
+- **Feature Screens:** Placeholder screens for Face Recognition, Object Detection, OCR, and Navigation features
+
+### Main Menu Navigation Testing
+
+1. **Launch the App:**
+   - The app will start at the Main Menu screen
+   - You'll see four cards: Face Recognition, Object Detection, OCR, and Navigation
+
+2. **Test Navigation to Features:**
+   - Tap on any of the four feature cards
+   - Each will navigate to a placeholder screen with the feature name and "coming soon" message
+   - Use the back button or action bar back arrow to return to the main menu
+
+3. **Test Responsive Layout:**
+   - Rotate the device to test landscape orientation
+   - The cards will adjust to maintain proper spacing and readability
+   - Test on different screen sizes (phone, tablet) if available
+
+4. **Test Back Navigation:**
+   - From any feature screen, press the back button
+   - You should return to the main menu
+   - The action bar should show the correct title for each screen
+
+5. **Access Main Menu from Home:**
+   - Navigate to the Home screen using the "Go to Main Menu" button
+   - This provides an alternative way to access the main menu
 
 ### Firebase Cloud Messaging (FCM) Setup & Testing
 

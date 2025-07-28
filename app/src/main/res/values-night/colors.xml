@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Default Android Template Colors (Required) -->
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+
+    <!-- Primary Colors (Dark Theme) -->
+    <color name="primary_color">#818cf8</color>
+    <color name="primary_dark">#6366f1</color>
+    <color name="accent_color">#6366f1</color>
+
+    <!-- Background Colors (Dark Theme) -->
+    <color name="background_primary">#0f172a</color>
+    <color name="card_background">#1e293b</color>
+    <color name="card_background_secondary">#334155</color>
+
+    <!-- Text Colors (Dark Theme) -->
+    <color name="text_primary">#f1f5f9</color>
+    <color name="text_secondary">#cbd5e1</color>
+    <color name="text_tertiary">#94a3b8</color>
+
+    <!-- Status Colors (Dark Theme) -->
+    <color name="success">#34d399</color>
+    <color name="warning">#fbbf24</color>
+    <color name="error">#f87171</color>
+    <color name="info">#60a5fa</color>
+
+    <!-- Gradient Colors (Dark Theme) -->
+    <color name="gradient_start">#1e293b</color>
+    <color name="gradient_center">#334155</color>
+    <color name="gradient_end">#475569</color>
+
+    <!-- Surface Colors (Dark Theme) -->
+    <color name="surface_primary">#1e293b</color>
+    <color name="surface_secondary">#334155</color>
+    <color name="surface_tertiary">#475569</color>
+
+    <!-- Ripple and Selection (Dark Theme) -->
+    <color name="ripple_color">#1a6366f1</color>
+    <color name="selection_color">#0d6366f1</color>
+
+    <!-- Shadow Colors (Dark Theme) -->
+    <color name="shadow_light">#0a000000</color>
+    <color name="shadow_dark">#33000000</color>
+</resources>
