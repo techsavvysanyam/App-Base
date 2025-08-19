@@ -56,6 +56,11 @@ A starter Android app using Kotlin, AndroidX, ViewBinding, Navigation Component,
   <img src="screenshots/screen6.jpg" width="200" alt="Sample Fragment A/c to Respected Feature"/>
 </div>
 
+<div style="text-align: center;">
+  <img src="screenshots/screen7.jpg" width="200" alt="Face Recognition (Capture or Pick)"/>
+  <img src="screenshots/screen8.jpg" width="200" alt="Sample of face detection results and bounding boxes"/>
+</div>
+
 ## Usage
 ### Face Recognition
 1. Open the app and navigate to Face Recognition from the Main Menu.
