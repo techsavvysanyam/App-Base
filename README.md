@@ -12,6 +12,11 @@ A starter Android app using Kotlin, AndroidX, ViewBinding, Navigation Component,
    - Add your app's SHA-1 fingerprint to the project settings
 4. Sync Gradle and run the app.
 
+### Face Recognition Setup Notes
+- No additional API keys required (on-device ML Kit face detection)
+- Permissions handled at runtime: Camera, and Storage (only on Android 12 and lower)
+- Uses Android 13+ Photo Picker when available (no storage permission needed)
+
 ## Features
 - Single-Activity architecture with Navigation Component
 - Main Menu with four core feature options (Face Recognition, Object Detection, OCR, Navigation)
@@ -22,6 +27,7 @@ A starter Android app using Kotlin, AndroidX, ViewBinding, Navigation Component,
 - Anonymous authentication support
 - Material Design UI components
 - Responsive layout for different screen sizes
+- Face Recognition (ML Kit): capture or pick an image, on-device face detection, bounding boxes overlay, face count, and details
 
 ## Dependencies
 - AndroidX
@@ -31,6 +37,7 @@ A starter Android app using Kotlin, AndroidX, ViewBinding, Navigation Component,
 - Firebase Cloud Messaging
 - Google Play Services Auth
 - Glide (for image loading)
+- ML Kit Face Detection (on-device)
 
 ## 📸 Screenshots
 
@@ -50,6 +57,16 @@ A starter Android app using Kotlin, AndroidX, ViewBinding, Navigation Component,
 </div>
 
 ## Usage
+### Face Recognition
+1. Open the app and navigate to Face Recognition from the Main Menu.
+2. Tap "Capture Image" to take a photo or "Pick Image" to select from gallery.
+3. The app draws green bounding boxes around detected faces and shows the face count and details.
+4. Tap "Clear" to reset the view.
+
+Troubleshooting:
+- If camera permission is denied, grant it from system settings and try again.
+- Very large images may take a moment to process; a spinner shows while detecting.
+
 
 ### Google Sign-In Setup
 1. **Firebase Console Setup:**
@@ -71,7 +88,7 @@ A starter Android app using Kotlin, AndroidX, ViewBinding, Navigation Component,
 ### Navigation
 - **Main Menu:** Default start destination with four core feature options
 - **Home Screen:** Shows current user info and navigation options (which includes Anonymous Sign-in and Go to Sign-in Buttons)
-- **Feature Screens:** Placeholder screens for Face Recognition, Object Detection, OCR, and Navigation features
+- **Feature Screens:** Face Recognition is implemented. Object Detection, OCR, and Navigation are placeholders.
 
 ### Main Menu Navigation Testing
 
@@ -80,8 +97,8 @@ A starter Android app using Kotlin, AndroidX, ViewBinding, Navigation Component,
    - You'll see four cards: Face Recognition, Object Detection, OCR, and Navigation
 
 2. **Test Navigation to Features:**
-   - Tap on any of the four feature cards
-   - Each will navigate to a placeholder screen with the feature name and "coming soon" message
+   - Tap on Face Recognition to try the live feature
+   - The other three cards navigate to placeholder screens with a "coming soon" message
    - Use the back button or action bar back arrow to return to the main menu
 
 3. **Test Responsive Layout:**

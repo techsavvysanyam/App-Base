@@ -35,8 +35,9 @@
             android:id="@+id/image_input"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:contentDescription="@string/image_preview"
             android:scaleType="fitCenter"
-            tools:src="@drawable/screen1" />
+            tools:src="@mipmap/ic_launcher" />
 
         <com.google.android.material.imageview.ShapeableImageView
             android:id="@+id/overlay"

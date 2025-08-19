@@ -45,7 +45,7 @@
     <string name="face_recognition_placeholder">Capture and select an image to detect faces</string>
     <!-- Face Recognition -->
     <string name="face_no_faces">No faces detected</string>
-    <string name="face_detecting">Detecting faces...</string>
+    <string name="face_detecting">Detecting faces…</string>
     <string name="face_permission_required">Camera permission is required to capture photos.</string>
     <string name="face_pick_image">Pick Image</string>
     <string name="face_capture_image">Capture Image</string>
@@ -67,4 +67,5 @@
     <string name="error_network">Check your internet connection and try again.</string>
     <string name="error_permission">Permission required to access this feature.</string>
     <string name="go_to_home">Go to Home</string>
+    <string name="image_preview">image preview</string>
 </resources> 
