@@ -42,7 +42,13 @@
     <string name="navigation_title">Navigation</string>
 
     <!-- Placeholder Messages -->
-    <string name="face_recognition_placeholder">Face Recognition feature coming soon!</string>
+    <string name="face_recognition_placeholder">Capture and select an image to detect faces</string>
+    <!-- Face Recognition -->
+    <string name="face_no_faces">No faces detected</string>
+    <string name="face_detecting">Detecting faces...</string>
+    <string name="face_permission_required">Camera permission is required to capture photos.</string>
+    <string name="face_pick_image">Pick Image</string>
+    <string name="face_capture_image">Capture Image</string>
     <string name="object_detection_placeholder">Object Detection feature coming soon!</string>
     <string name="ocr_placeholder">OCR feature coming soon!</string>
     <string name="navigation_placeholder">Navigation feature coming soon!</string>
@@ -54,6 +60,7 @@
     <string name="back">Back</string>
     <string name="next">Next</string>
     <string name="done">Done</string>
+    <string name="clear">Clear</string>
 
     <!-- Error Messages -->
     <string name="error_generic">Something went wrong. Please try again.</string>
