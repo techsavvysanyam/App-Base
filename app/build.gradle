@@ -60,6 +60,7 @@ dependencies {
     implementation libs.material
     implementation libs.androidx.constraintlayout
     implementation libs.androidx.cardview
+    implementation libs.androidx.recyclerview
     implementation libs.androidx.navigation.fragment.ktx
     implementation libs.androidx.navigation.ui.ktx
     implementation libs.firebase.auth.ktx
@@ -68,4 +69,14 @@ dependencies {
     implementation libs.play.services.auth
     implementation libs.play.services.measurement.api
     implementation libs.mlkit.face.detection
+    implementation libs.mlkit.custom.object.detection
+    implementation libs.vision.common
+    implementation 'com.google.mlkit:object-detection:17.0.1'
+    
+    // CameraX for camera functionality
+    implementation libs.camerax.core
+    implementation libs.camerax.camera2
+    implementation libs.camerax.lifecycle
+    implementation libs.camerax.view
+    
 }

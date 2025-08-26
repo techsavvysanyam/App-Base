@@ -49,7 +49,23 @@
     <string name="face_permission_required">Camera permission is required to capture photos.</string>
     <string name="face_pick_image">Pick Image</string>
     <string name="face_capture_image">Capture Image</string>
-    <string name="object_detection_placeholder">Object Detection feature coming soon!</string>
+    <string name="object_detection_placeholder">Use camera or select image to detect objects</string>
+    <string name="start_camera">Start Camera</string>
+    <string name="select_image">Select Image</string>
+    <string name="detection_results">Detection Results</string>
+    <string name="no_objects_detected">No objects detected</string>
+    <string name="object_icon">Object Icon</string>
+    <string name="camera_permission_required">Camera permission is required to use this feature.</string>
+    <string name="storage_permission_required">Storage permission is required to select images.</string>
+    <string name="detecting_objects">Detecting objects...</string>
+    <string name="detection_failed">Object detection failed. Please try again.</string>
+    <string name="capture_image">Capture Image</string>
+    <string name="stop_detection">Stop Detection</string>
+    <string name="select_from_gallery">Select from Gallery</string>
+    <string name="selected_image_for_object_detection">Selected image for object detection</string>
+    <string name="choose_detection_mode">Choose Object Detection Mode</string>
+    <string name="object_detection_live">Object Detection (Live)</string>
+    <string name="object_detection_image">Object Detection (Image)</string>
     <string name="ocr_placeholder">OCR feature coming soon!</string>
     <string name="navigation_placeholder">Navigation feature coming soon!</string>
 
@@ -68,4 +84,4 @@
     <string name="error_permission">Permission required to access this feature.</string>
     <string name="go_to_home">Go to Home</string>
     <string name="image_preview">image preview</string>
-</resources> 
+</resources>

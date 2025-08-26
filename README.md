@@ -61,6 +61,15 @@ A starter Android app using Kotlin, AndroidX, ViewBinding, Navigation Component,
   <img src="screenshots/screen8.jpg" width="200" alt="Sample of face detection results and bounding boxes"/>
 </div>
 
+<div style="text-align: center;">
+  <img src="screenshots/screen9.jpg" width="200" alt="Object detection (Live or Pick)"/>
+  <img src="screenshots/screen10.jpg" width="200" alt="Live Object Detection S-1"/>
+</div>
+<div style="text-align: center;">
+  <img src="screenshots/screen11.jpg" width="200" alt="Live Object Detection S-2"/>
+  <img src="screenshots/screen12.jpg" width="200" alt="Selected Image Object Detection"/>
+</div>
+
 ## Usage
 ### Face Recognition
 1. Open the app and navigate to Face Recognition from the Main Menu.

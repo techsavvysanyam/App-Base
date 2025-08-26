@@ -16,8 +16,11 @@
             app:destination="@id/faceRecognitionFragment" />
 
         <action
-            android:id="@+id/action_mainMenuFragment_to_objectDetectionFragment"
-            app:destination="@id/objectDetectionFragment" />
+            android:id="@+id/action_mainMenuFragment_to_objectDetectionLiveFragment"
+            app:destination="@id/objectDetectionLiveFragment" />
+        <action
+            android:id="@+id/action_mainMenuFragment_to_objectDetectionImageFragment"
+            app:destination="@id/objectDetectionImageFragment" />
 
         <action
             android:id="@+id/action_mainMenuFragment_to_ocrFragment"
@@ -35,10 +38,15 @@
         tools:layout="@layout/fragment_face_recognition" />
 
     <fragment
-        android:id="@+id/objectDetectionFragment"
-        android:name="com.example.appbase.ObjectDetectionFragment"
-        android:label="@string/object_detection_title"
-        tools:layout="@layout/fragment_object_detection" />
+        android:id="@+id/objectDetectionLiveFragment"
+        android:name="com.example.appbase.ObjectDetectionLiveFragment"
+        android:label="@string/object_detection_live"
+        tools:layout="@layout/fragment_object_detection_live" />
+    <fragment
+        android:id="@+id/objectDetectionImageFragment"
+        android:name="com.example.appbase.ObjectDetectionImageFragment"
+        android:label="@string/object_detection_image"
+        tools:layout="@layout/fragment_object_detection_image" />
 
     <fragment
         android:id="@+id/ocrFragment"

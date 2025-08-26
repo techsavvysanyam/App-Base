@@ -23,7 +23,8 @@ class MainMenuFragment : Fragment() {
         }
 
         binding.layoutObjectDetection.setOnClickListener {
-            findNavController().navigate(R.id.action_mainMenuFragment_to_objectDetectionFragment)
+            val dialog = ObjectDetectionChoiceDialogFragment()
+            dialog.show(childFragmentManager, "ObjectDetectionChoiceDialogFragment")
         }
 
         binding.layoutOcr.setOnClickListener {

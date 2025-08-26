@@ -1,0 +1,24 @@
+## This file contains machine-specific properties for the Gradle build toolkit.
+# Do not commit this file to version control.
+# Copy this file to 'local.properties' and fill in your actual API keys.
+
+# Location of the Android SDK. This is only used by Gradle.
+# For customization when using a Version Control System, please read the
+# header note.
+sdk.dir=C\:\\Users\\YourUsername\\AppData\\Local\\Android\\Sdk
+
+# API Keys - Replace with your actual keys
+# Firebase API Key (from Firebase Console)
+FIREBASE_API_KEY=your_firebase_api_key_here
+
+# Google Maps API Key (from Google Cloud Console)
+MAPS_API_KEY=your_maps_api_key_here
+
+# Google Vision API Key (from Google Cloud Console)
+VISION_API_KEY=your_vision_api_key_here
+
+# Instructions:
+# 1. Copy this file to 'local.properties'
+# 2. Replace the placeholder values with your actual API keys
+# 3. Never commit the 'local.properties' file to version control
+# 4. The actual google-services.json file should also not be committed
