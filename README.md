@@ -1,6 +1,7 @@
 # App Base
 
 A starter Android app using Kotlin, AndroidX, ViewBinding, Navigation Component, and Firebase (Auth + FCM) with Google Sign-In integration.
+Addon: Face Detection, Object Detection and more coming soon!
 
 ## Setup
 
@@ -12,8 +13,8 @@ A starter Android app using Kotlin, AndroidX, ViewBinding, Navigation Component,
    - Add your app's SHA-1 fingerprint to the project settings
 4. Sync Gradle and run the app.
 
-### Face Recognition Setup Notes
-- No additional API keys required (on-device ML Kit face detection)
+### Face and Object Recognition Setup Notes
+- No additional API keys required (on-device ML Kit face and object detection)
 - Permissions handled at runtime: Camera, and Storage (only on Android 12 and lower)
 - Uses Android 13+ Photo Picker when available (no storage permission needed)
 
@@ -28,6 +29,7 @@ A starter Android app using Kotlin, AndroidX, ViewBinding, Navigation Component,
 - Material Design UI components
 - Responsive layout for different screen sizes
 - Face Recognition (ML Kit): capture or pick an image, on-device face detection, bounding boxes overlay, face count, and details
+- Object Detection (Tensorflow Lite/ ML Kit): live and still image object detection, on-device, bounding boxes with tracing objects including labels and confidence scores.
 
 ## Dependencies
 - AndroidX
@@ -38,6 +40,7 @@ A starter Android app using Kotlin, AndroidX, ViewBinding, Navigation Component,
 - Google Play Services Auth
 - Glide (for image loading)
 - ML Kit Face Detection (on-device)
+- Tensor Flow Lite/ ML Kit Object Detection (Live or Image both on-device)
 
 ## 📸 Screenshots
 
@@ -76,6 +79,11 @@ A starter Android app using Kotlin, AndroidX, ViewBinding, Navigation Component,
 2. Tap "Capture Image" to take a photo or "Pick Image" to select from gallery.
 3. The app draws green bounding boxes around detected faces and shows the face count and details.
 4. Tap "Clear" to reset the view.
+
+### Object Detection 
+1. Click Object detection from Menu.
+2. Select from two options Live or Select from gallery.
+3. A/c to selected option user use and detect given or shown object name and confidence score.
 
 Troubleshooting:
 - If camera permission is denied, grant it from system settings and try again.
