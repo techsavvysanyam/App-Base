@@ -85,7 +85,7 @@ A starter Android app using Kotlin, AndroidX, ViewBinding, Navigation Component,
   <img src="screenshots/screen14.jpg" width="200" alt="Captured Image OCR (Extract Text From Image)"/>
 </div>
 
-## Usage
+## Usage..
 
 ### OCR (Optical Character Recognition)
 1. **Navigate to OCR**: Open the app and tap "OCR" from the Main Menu.

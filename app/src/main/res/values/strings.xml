@@ -81,7 +81,7 @@
     <string name="recognized_text">Recognized Text</string>
     <string name="copy">Copy</string>
     <string name="share">Share</string>
-    <string name="processing_image">Processing image...</string>
+    <string name="processing_image">Processing image…</string>
     <string name="text_recognition_failed">Text recognition failed. Please try again.</string>
     <string name="no_text_found">No text found in the image</string>
     <string name="text_copied">Text copied to clipboard</string>
@@ -104,4 +104,5 @@
     <string name="error_permission">Permission required to access this feature.</string>
     <string name="go_to_home">Go to Home</string>
     <string name="image_preview">image preview</string>
+    <string name="preview_of_image">Preview of image</string>
 </resources>
