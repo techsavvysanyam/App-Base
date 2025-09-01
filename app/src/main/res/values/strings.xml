@@ -57,7 +57,7 @@
     <string name="object_icon">Object Icon</string>
     <string name="camera_permission_required">Camera permission is required to use this feature.</string>
     <string name="storage_permission_required">Storage permission is required to select images.</string>
-    <string name="detecting_objects">Detecting objects...</string>
+    <string name="detecting_objects">Detecting objects…</string>
     <string name="detection_failed">Object detection failed. Please try again.</string>
     <string name="capture_image">Capture Image</string>
     <string name="stop_detection">Stop Detection</string>
@@ -67,6 +67,26 @@
     <string name="object_detection_live">Object Detection (Live)</string>
     <string name="object_detection_image">Object Detection (Image)</string>
     <string name="ocr_placeholder">OCR feature coming soon!</string>
+    
+    <!-- OCR Feature -->
+    <string name="ocr_subtitle">Extract text from images</string>
+    <string name="camera_capture">Camera</string>
+    <string name="gallery_select">Gallery</string>
+    <string name="language_selection">Language Selection</string>
+    <string name="english">English</string>
+    <string name="chinese">Chinese</string>
+    <string name="japanese">Japanese</string>
+    <string name="korean">Korean</string>
+    <string name="devanagari">Devanagari</string>
+    <string name="recognized_text">Recognized Text</string>
+    <string name="copy">Copy</string>
+    <string name="share">Share</string>
+    <string name="processing_image">Processing image...</string>
+    <string name="text_recognition_failed">Text recognition failed. Please try again.</string>
+    <string name="no_text_found">No text found in the image</string>
+    <string name="text_copied">Text copied to clipboard</string>
+    <string name="confidence_score">Confidence: %1$s%%</string>
+    
     <string name="navigation_placeholder">Navigation feature coming soon!</string>
 
     <!-- Common Actions -->

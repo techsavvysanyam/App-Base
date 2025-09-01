@@ -50,4 +50,10 @@
     <!-- Shadow Colors (Dark Theme) -->
     <color name="shadow_light">#0a000000</color>
     <color name="shadow_dark">#33000000</color>
+    
+    <!-- Chip Colors (Dark Theme) -->
+    <color name="chip_background_dark">#334155</color>
+    <color name="chip_stroke_dark">#475569</color>
+    <color name="chip_selected_background_dark">#6366f1</color>
+    <color name="chip_selected_text_dark">#ffffff</color>
 </resources>

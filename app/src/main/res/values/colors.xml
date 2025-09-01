@@ -47,4 +47,10 @@
     <!-- Shadow Colors -->
     <color name="shadow_light">#0a000000</color>
     <color name="shadow_dark">#1a000000</color>
+    
+    <!-- Chip Colors -->
+    <color name="chip_background">#f1f5f9</color>
+    <color name="chip_stroke">#e2e8f0</color>
+    <color name="chip_selected_background">#667eea</color>
+    <color name="chip_selected_text">#ffffff</color>
 </resources>

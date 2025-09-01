@@ -1,23 +1,26 @@
 [versions]
 cardview = "1.0.0"
-recyclerview = "1.3.2"
+objectDetection = "17.0.2"
+recyclerview = "1.4.0"
 firebaseAuthKtx = "23.2.1"
 firebaseMessagingKtx = "24.1.2"
 glide = "4.16.0"
-coreKtx = "1.16.0"
+coreKtx = "1.17.0"
 appcompat = "1.7.1"
 material = "1.12.0"
 constraintlayout = "2.2.1"
-navigationFragmentKtx = "2.9.1"
-navigationUiKtx = "2.9.1"
-playServicesAuth = "21.3.0"
-playServicesMeasurementApi = "22.5.0"
+navigationFragmentKtx = "2.9.3"
+navigationUiKtx = "2.9.3"
+playServicesAuth = "21.4.0"
+playServicesMeasurementApi = "23.0.0"
 mlkitFaceDetection = "16.1.7"
 mlkitObjectDetection = "17.3.0"
 mlkitCustomObjectDetection = "17.0.2"
+mlkitTextRecognition = "16.0.0"
 camerax = "1.4.2"
 cameraxView = "1.4.2"
 cameraxLifecycle = "1.4.2"
+coroutines = "1.8.0"
 
 [libraries]
 androidx-cardview = { module = "androidx.cardview:cardview", version.ref = "cardview" }
@@ -31,15 +34,23 @@ glide = { module = "com.github.bumptech.glide:glide", version.ref = "glide" }
 androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
 androidx-constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
+object1-detection = { module = "com.google.mlkit:object-detection", version.ref = "objectDetection" }
 play-services-auth = { module = "com.google.android.gms:play-services-auth", version.ref = "playServicesAuth" }
 play-services-measurement-api = { module = "com.google.android.gms:play-services-measurement-api", version.ref = "playServicesMeasurementApi" }
 mlkit-face-detection = { module = "com.google.mlkit:face-detection", version.ref = "mlkitFaceDetection" }
 mlkit-custom-object-detection = { module = "com.google.mlkit:object-detection-custom", version.ref = "mlkitCustomObjectDetection" }
+mlkit-text-recognition = { module = "com.google.mlkit:text-recognition", version.ref = "mlkitTextRecognition" }
+mlkit-text-recognition-chinese = { module = "com.google.mlkit:text-recognition-chinese", version.ref = "mlkitTextRecognition" }
+mlkit-text-recognition-devanagari = { module = "com.google.mlkit:text-recognition-devanagari", version.ref = "mlkitTextRecognition" }
+mlkit-text-recognition-japanese = { module = "com.google.mlkit:text-recognition-japanese", version.ref = "mlkitTextRecognition" }
+mlkit-text-recognition-korean = { module = "com.google.mlkit:text-recognition-korean", version.ref = "mlkitTextRecognition" }
 camerax-core = { module = "androidx.camera:camera-core", version.ref = "camerax" }
 camerax-camera2 = { module = "androidx.camera:camera-camera2", version.ref = "camerax" }
 camerax-lifecycle = { module = "androidx.camera:camera-lifecycle", version.ref = "cameraxLifecycle" }
 camerax-view = { module = "androidx.camera:camera-view", version.ref = "cameraxView" }
 vision-common = { module = "com.google.mlkit:vision-common", version.ref = "mlkitObjectDetection" }
+coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutines" }
+coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "coroutines" }
 
 [plugins]
 

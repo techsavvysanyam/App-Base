@@ -33,6 +33,9 @@
         <!-- Card Style -->
         <item name="materialCardViewStyle">@style/Widget.AppBase.CardView.Dark</item>
         <item name="buttonStyle">@style/Widget.AppBase.Button</item>
+        
+        <!-- Chip Style -->
+        <item name="chipStyle">@style/Widget.AppBase.Chip.Dark</item>
     </style>
 
     <!-- Custom Card Style -->
@@ -41,5 +44,13 @@
         <item name="cardElevation">4dp</item>
         <item name="cardBackgroundColor">@color/card_background_dark</item>
         <item name="android:layout_margin">8dp</item>
+    </style>
+    
+    <!-- Custom Chip Style for Dark Theme -->
+    <style name="Widget.AppBase.Chip.Dark" parent="Widget.MaterialComponents.Chip.Filter">
+        <item name="android:textSize">14sp</item>
+        <item name="chipBackgroundColor">@color/chip_background_dark</item>
+        <item name="chipStrokeColor">@color/chip_stroke_dark</item>
+        <item name="chipStrokeWidth">1dp</item>
     </style>
 </resources>

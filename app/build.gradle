@@ -6,7 +6,7 @@ plugins {
 
 android {
     namespace 'com.example.appbase'
-    compileSdk 35
+    compileSdk 36
 
     defaultConfig {
         applicationId 'com.example.appbase'
@@ -71,7 +71,18 @@ dependencies {
     implementation libs.mlkit.face.detection
     implementation libs.mlkit.custom.object.detection
     implementation libs.vision.common
-    implementation 'com.google.mlkit:object-detection:17.0.1'
+    implementation libs.object1.detection
+    
+    // ML Kit Text Recognition
+    implementation libs.mlkit.text.recognition
+    implementation libs.mlkit.text.recognition.chinese
+    implementation libs.mlkit.text.recognition.devanagari
+    implementation libs.mlkit.text.recognition.japanese
+    implementation libs.mlkit.text.recognition.korean
+    
+    // Coroutines
+    implementation libs.coroutines.core
+    implementation libs.coroutines.android
     
     // CameraX for camera functionality
     implementation libs.camerax.core
