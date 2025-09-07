@@ -24,6 +24,16 @@ A starter Android app using Kotlin, AndroidX, ViewBinding, Navigation Component,
 - Supports multiple languages: English, Chinese, Japanese, Korean, and Devanagari
 - Automatic language detection based on recognized text patterns
 
+### Navigation Setup Notes
+- **Google Maps API Key Required**: Add your API key to `local.properties` file
+- **Required APIs**: Enable in Google Cloud Console:
+  - Maps SDK for Android
+  - Places API (Legacy) - doesn't require billing
+  - Directions API
+- **Permissions**: Location permissions handled at runtime
+- **Internet Required**: For map tiles, place search, and directions
+- **Setup Guide**: See `NAVIGATION_API_SETUP_GUIDE.md` for detailed configuration
+
 ## Features
 - Single-Activity architecture with Navigation Component
 - Main Menu with four core feature options (Face Recognition, Object Detection, OCR, Navigation)
@@ -36,6 +46,7 @@ A starter Android app using Kotlin, AndroidX, ViewBinding, Navigation Component,
 - Responsive layout for different screen sizes
 - **Face Recognition (ML Kit)**: capture or pick an image, on-device face detection, bounding boxes overlay, face count, and details
 - **OCR (Optical Character Recognition)**: extract text from images using ML Kit Text Recognition API with multi-language support, camera capture, gallery selection, and text sharing capabilities
+- **Navigation (Google Maps)**: full-featured navigation with Google Maps integration, location services, place search, and route planning
 
 ## Dependencies
 - AndroidX
@@ -49,6 +60,9 @@ A starter Android app using Kotlin, AndroidX, ViewBinding, Navigation Component,
 - **ML Kit Text Recognition** (on-device OCR for multiple languages)
 - **CameraX** (camera integration for OCR)
 - **Kotlin Coroutines** (asynchronous OCR processing)
+- **Google Maps SDK** (interactive maps and location services)
+- **Google Places API** (place search and autocomplete)
+- **Google Directions API** (route planning and navigation)
 
 ## 📸 Screenshots
 
@@ -84,6 +98,10 @@ A starter Android app using Kotlin, AndroidX, ViewBinding, Navigation Component,
   <img src="screenshots/screen13.jpg" width="200" alt="OCR (Capture or Pick)"/>
   <img src="screenshots/screen14.jpg" width="200" alt="Captured Image OCR (Extract Text From Image)"/>
 </div>
+<div style="text-align: center;">
+  <img src="screenshots/screen15.jpg" width="200" alt="Navigation (Default Location)"/>
+  <img src="screenshots/screen16.jpg" width="200" alt="Current user location/>
+</div>
 
 ## Usage..
 
@@ -111,6 +129,37 @@ A starter Android app using Kotlin, AndroidX, ViewBinding, Navigation Component,
 - Very large images may take a moment to process; a progress bar shows while processing
 - For best results, ensure text is clearly visible and well-lit in the image
 - Try different language settings if recognition accuracy is low
+
+### Navigation (Google Maps)
+1. **Open Navigation**: Tap "Navigation" from the Main Menu to open the full-featured Google Maps navigation
+2. **Grant Location Permissions**: Allow location access when prompted for current location functionality
+3. **Search for Places**: Use the search bar to find destinations with autocomplete suggestions
+4. **Get Current Location**: Tap "Current Location" button to center the map on your current position
+5. **Select Destination**: Choose a place from search results to set as your destination
+6. **Get Directions**: Tap "Navigate" to get driving directions with route visualization
+7. **View Route Info**: See distance and estimated travel time for your selected route
+8. **Clear Route**: Tap "Clear Route" to remove the current route and start over
+
+**Features:**
+- **Interactive Google Maps**: Full-screen map with zoom, pan, and map type controls
+- **Location Services**: Real-time current location tracking with GPS
+- **Place Search**: Google Places API integration with autocomplete suggestions
+- **Route Planning**: Google Directions API for driving directions and route visualization
+- **Visual Route Display**: Polylines showing the complete route on the map
+- **Distance & Duration**: Real-time route information display
+- **Modern UI**: Material Design interface with floating action buttons
+
+**Setup Requirements:**
+- **Google Maps API Key**: Configure in `local.properties` file
+- **Required APIs**: Enable Maps SDK for Android, Places API (Legacy), and Directions API in Google Cloud Console
+- **Location Permissions**: Fine and coarse location permissions for GPS functionality
+- **Internet Connection**: Required for map tiles, place search, and directions
+
+**Troubleshooting:**
+- If location permission is denied, grant it from system settings
+- If search doesn't work, check your Google Maps API key configuration
+- If routes don't display, verify Directions API is enabled in Google Cloud Console
+- For best results, use the app in areas with good GPS signal
 
 ### Face Recognition
 1. Open the app and navigate to Face Recognition from the Main Menu.
@@ -143,7 +192,7 @@ Troubleshooting:
 ### Navigation
 - **Main Menu:** Default start destination with four core feature options
 - **Home Screen:** Shows current user info and navigation options (which includes Anonymous Sign-in and Go to Sign-in Buttons)
-- **Feature Screens:** Face Recognition and OCR are fully implemented. Object Detection and Navigation are placeholders.
+- **Feature Screens:** Face Recognition, OCR, and Navigation are fully implemented. Object Detection is a placeholder.
 
 ### Main Menu Navigation Testing
 
@@ -154,7 +203,8 @@ Troubleshooting:
 2. **Test Navigation to Features:**
    - Tap on Face Recognition to try the live face detection feature
    - Tap on OCR to try the live text recognition feature
-   - Object Detection and Navigation cards navigate to placeholder screens with a "coming soon" message
+   - Tap on Navigation to open the full-featured Google Maps navigation
+   - Object Detection card navigates to a placeholder screen with a "coming soon" message
    - Use the back button or action bar back arrow to return to the main menu
 
 3. **Test Responsive Layout:**
@@ -246,6 +296,72 @@ enum class Language {
 - **Image Loading Failures**: Error messages and fallback options
 - **OCR Failures**: User-friendly error messages
 - **No Text Detected**: Clear feedback to user
+
+## Navigation Technical Implementation
+
+### Architecture
+- **Activity-based UI**: `NavigationActivity.kt` handles full-screen navigation interface
+- **Utility Classes**: `LocationManager.kt` and `DirectionsManager.kt` provide specialized functionality
+- **Google Maps Integration**: Native Android Maps SDK with custom controls
+- **Places API Integration**: Legacy Places API for place search and autocomplete
+
+### Key Components
+
+#### 1. Location Services
+```kotlin
+class LocationManager(private val context: Context) {
+    suspend fun getCurrentLocation(): Location?
+    fun getLocationUpdates(): Flow<Location>
+    fun hasLocationPermission(): Boolean
+}
+```
+- **FusedLocationProviderClient**: Google's recommended location provider
+- **Real-time Updates**: Continuous location tracking with configurable intervals
+- **Permission Management**: Runtime permission handling and validation
+- **Distance Calculations**: Utility functions for location-based calculations
+
+#### 2. Directions API Integration
+```kotlin
+class DirectionsManager(private val context: Context, private val apiKey: String) {
+    suspend fun getDirections(origin: LatLng, destination: LatLng): Result<RouteInfo>
+    suspend fun getTravelTime(origin: LatLng, destination: LatLng): Result<String>
+}
+```
+- **HTTP-based Implementation**: Direct API calls to Google Directions API
+- **Polyline Decoding**: Custom algorithm for route visualization
+- **Route Information**: Distance and duration parsing from API responses
+- **Error Handling**: Comprehensive error management and user feedback
+
+#### 3. Places API Integration
+- **AutocompleteSupportFragment**: Built-in place search with suggestions
+- **Place Selection**: Automatic destination setting from search results
+- **Legacy API**: Uses Places API (Legacy) that doesn't require billing
+- **Real-time Search**: Live autocomplete as user types
+
+#### 4. Map Features
+- **Interactive Maps**: Full Google Maps functionality with custom controls
+- **Marker Management**: Current location and destination markers
+- **Route Visualization**: Polylines with custom styling and colors
+- **Camera Controls**: Automatic centering and zoom management
+- **Floating Action Button**: Quick access to current location
+
+### Performance Optimizations
+- **Memory Management**: Efficient marker and polyline management
+- **Async Operations**: Coroutine-based location and API operations
+- **Request Caching**: Optimized API calls and response handling
+- **Background Processing**: Non-blocking UI during location updates
+
+### Error Handling
+- **Location Errors**: Graceful handling of GPS and permission issues
+- **API Failures**: User-friendly error messages for network issues
+- **Permission Denied**: Clear guidance for enabling location access
+- **Network Issues**: Offline map support and retry mechanisms
+
+### Security Considerations
+- **API Key Protection**: Secure storage in local.properties
+- **Location Privacy**: User consent and permission management
+- **Request Validation**: Input sanitization and validation
+- **Error Logging**: Comprehensive logging without sensitive data exposure
 
 ---
 

@@ -1,5 +1,6 @@
 package com.example.appbase
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -32,7 +33,8 @@ class MainMenuFragment : Fragment() {
         }
 
         binding.layoutNavigation.setOnClickListener {
-            findNavController().navigate(R.id.action_mainMenuFragment_to_navigationFragment)
+            val intent = Intent(requireContext(), NavigationActivity::class.java)
+            startActivity(intent)
         }
 
         return binding.root

@@ -21,6 +21,9 @@ camerax = "1.4.2"
 cameraxView = "1.4.2"
 cameraxLifecycle = "1.4.2"
 coroutines = "1.8.0"
+maps = "19.0.0"
+places = "3.4.0"
+location = "21.3.0"
 
 [libraries]
 androidx-cardview = { module = "androidx.cardview:cardview", version.ref = "cardview" }
@@ -51,6 +54,9 @@ camerax-view = { module = "androidx.camera:camera-view", version.ref = "cameraxV
 vision-common = { module = "com.google.mlkit:vision-common", version.ref = "mlkitObjectDetection" }
 coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutines" }
 coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "coroutines" }
+maps = { module = "com.google.android.gms:play-services-maps", version.ref = "maps" }
+places = { module = "com.google.android.libraries.places:places", version.ref = "places" }
+location = { module = "com.google.android.gms:play-services-location", version.ref = "location" }
 
 [plugins]
 

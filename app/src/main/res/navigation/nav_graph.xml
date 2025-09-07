@@ -26,9 +26,6 @@
             android:id="@+id/action_mainMenuFragment_to_ocrFragment"
             app:destination="@id/ocrFragment" />
 
-        <action
-            android:id="@+id/action_mainMenuFragment_to_navigationFragment"
-            app:destination="@id/navigationFragment" />
     </fragment>
 
     <fragment
@@ -54,11 +51,6 @@
         android:label="@string/ocr_title"
         tools:layout="@layout/fragment_ocr" />
 
-    <fragment
-        android:id="@+id/navigationFragment"
-        android:name="com.example.appbase.NavigationFragment"
-        android:label="@string/navigation_title"
-        tools:layout="@layout/fragment_navigation" />
 
     <fragment
         android:id="@+id/homeFragment"

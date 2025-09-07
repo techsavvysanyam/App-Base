@@ -25,6 +25,11 @@ android {
         buildConfigField "String", "FIREBASE_API_KEY", "\"${properties.getProperty('FIREBASE_API_KEY', '')}\""
         buildConfigField "String", "MAPS_API_KEY", "\"${properties.getProperty('MAPS_API_KEY', '')}\""
         buildConfigField "String", "VISION_API_KEY", "\"${properties.getProperty('VISION_API_KEY', '')}\""
+        
+        // Add manifest placeholders for API keys
+        manifestPlaceholders = [
+            MAPS_API_KEY: properties.getProperty('MAPS_API_KEY', '')
+        ]
     }
 
     buildTypes {
@@ -89,5 +94,10 @@ dependencies {
     implementation libs.camerax.camera2
     implementation libs.camerax.lifecycle
     implementation libs.camerax.view
+    
+    // Google Maps and Location Services
+    implementation libs.maps
+    implementation libs.places
+    implementation libs.location
     
 }
