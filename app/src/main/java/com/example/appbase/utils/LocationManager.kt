@@ -168,3 +168,4 @@ class LocationManager(private val context: Context) {
         }
     }
 }
+

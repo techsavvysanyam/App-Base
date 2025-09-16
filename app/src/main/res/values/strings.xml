@@ -22,24 +22,28 @@
     <string name="object_detection">Object Detection</string>
     <string name="ocr">OCR</string>
     <string name="navigation">Navigation</string>
+    <string name="profile">Profile</string>
 
     <!-- Feature Descriptions -->
     <string name="face_recognition_description">Identify and analyze faces</string>
     <string name="object_detection_description">Detect objects in images</string>
     <string name="ocr_description">Extract text from images</string>
     <string name="navigation_description">Navigate with GPS</string>
+    <string name="profile_description">Manage your profile and settings</string>
 
     <!-- Icon Content Descriptions -->
     <string name="face_recognition_icon">Face Recognition Icon</string>
     <string name="object_detection_icon">Object Detection Icon</string>
     <string name="ocr_icon">OCR Icon</string>
     <string name="navigation_icon">Navigation Icon</string>
+    <string name="profile_icon">Profile Icon</string>
 
     <!-- Feature Fragment Titles -->
     <string name="face_recognition_title">Face Recognition</string>
     <string name="object_detection_title">Object Detection</string>
     <string name="ocr_title">Text Reading (OCR)</string>
     <string name="navigation_title">Navigation</string>
+    <string name="profile_title">Profile</string>
 
     <!-- Placeholder Messages -->
     <string name="face_recognition_placeholder">Capture and select an image to detect faces</string>
@@ -105,4 +109,23 @@
     <string name="go_to_home">Go to Home</string>
     <string name="image_preview">image preview</string>
     <string name="preview_of_image">Preview of image</string>
+    
+    <!-- Profile Management -->
+    <string name="profile_saved">Profile saved successfully!</string>
+    <string name="profile_sync_success">Profile synced with Google successfully!</string>
+    <string name="profile_picture_updated">Profile picture updated successfully!</string>
+    <string name="profile_load_error">Failed to load profile</string>
+    <string name="profile_save_error">Failed to save profile</string>
+    <string name="profile_sync_error">Failed to sync with Google</string>
+    <string name="profile_upload_error">Failed to upload image</string>
+    <string name="sign_out_success">Signed out successfully!</string>
+    <string name="change_photo">Change Photo</string>
+    <string name="save_profile">Save Profile</string>
+    <string name="sync_with_google">Sync with Google</string>
+    <string name="profile_information">Profile Information</string>
+    <string name="bio">Bio</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="date_of_birth">Date of Birth</string>
+    <string name="location">Location</string>
+    <string name="website">Website</string>
 </resources>

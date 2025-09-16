@@ -61,6 +61,9 @@
         <action
             android:id="@+id/action_homeFragment_to_mainMenuFragment"
             app:destination="@id/mainMenuFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
     </fragment>
 
     <fragment
@@ -68,5 +71,17 @@
         android:name="com.example.appbase.SignInFragment"
         android:label="Sign In"
         tools:layout="@layout/fragment_sign_in" />
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.appbase.ProfileFragment"
+        android:label="@string/profile_title"
+        tools:layout="@layout/fragment_profile">
+
+        <action
+            android:id="@+id/action_profile_to_signIn"
+            app:destination="@id/signInFragment" />
+
+    </fragment>
 
 </navigation>

@@ -37,7 +37,7 @@ import kotlinx.coroutines.withContext
 class NavigationActivity : AppCompatActivity(), OnMapReadyCallback {
 
     private lateinit var binding: ActivityNavigationBinding
-    private lateinit var map: GoogleMap
+    private var googleMap: GoogleMap? = null // Changed to nullable and renamed to avoid conflict
     private lateinit var fusedLocationClient: FusedLocationProviderClient
     private lateinit var locationManager: LocationManager
     private lateinit var directionsManager: DirectionsManager
@@ -193,7 +193,7 @@ class NavigationActivity : AppCompatActivity(), OnMapReadyCallback {
     private fun updateCurrentLocationMarker() {
         currentLocation?.let { location ->
             currentLocationMarker?.remove()
-            currentLocationMarker = map.addMarker(
+            currentLocationMarker = googleMap?.addMarker( // Use googleMap?.
                 MarkerOptions()
                     .position(location)
                     .title("Current Location")
@@ -203,26 +203,26 @@ class NavigationActivity : AppCompatActivity(), OnMapReadyCallback {
 
     private fun moveCameraToCurrentLocation() {
         currentLocation?.let { location ->
-            map.animateCamera(CameraUpdateFactory.newLatLngZoom(location, 15f))
+            googleMap?.animateCamera(CameraUpdateFactory.newLatLngZoom(location, 15f)) // Use googleMap?.
         }
     }
 
 
     private fun setDestination(latLng: LatLng, title: String) {
         destinationMarker?.remove()
-        destinationMarker = map.addMarker(
+        destinationMarker = googleMap?.addMarker( // Use googleMap?.
             MarkerOptions()
                 .position(latLng)
                 .title(title)
         )
-        map.animateCamera(CameraUpdateFactory.newLatLng(latLng))
+        googleMap?.animateCamera(CameraUpdateFactory.newLatLng(latLng)) // Use googleMap?.
     }
 
     private fun clearRoute() {
         currentPolyline?.remove()
         destinationMarker?.remove()
         currentLocation?.let { location ->
-            currentLocationMarker = map.addMarker(
+            currentLocationMarker = googleMap?.addMarker( // Use googleMap?.
                 MarkerOptions()
                     .position(location)
                     .title("Current Location")
@@ -257,7 +257,7 @@ class NavigationActivity : AppCompatActivity(), OnMapReadyCallback {
         currentPolyline?.remove()
         
         // Add new polyline
-        currentPolyline = map.addPolyline(routeInfo.polylineOptions)
+        currentPolyline = googleMap?.addPolyline(routeInfo.polylineOptions) // Use googleMap?.
 
         // Display route information
         binding.tvRouteInfo.text = "Distance: ${routeInfo.distance}\nDuration: ${routeInfo.duration}"
@@ -265,8 +265,8 @@ class NavigationActivity : AppCompatActivity(), OnMapReadyCallback {
         binding.btnNavigate.visibility = View.VISIBLE
     }
 
-    override fun onMapReady(googleMap: GoogleMap) {
-        map = googleMap
+    override fun onMapReady(map: GoogleMap) { // Renamed parameter to 'map'
+        googleMap = map // Assign to googleMap
 
         // Enable current location button
         if (ContextCompat.checkSelfPermission(
@@ -274,16 +274,16 @@ class NavigationActivity : AppCompatActivity(), OnMapReadyCallback {
                 Manifest.permission.ACCESS_FINE_LOCATION
             ) == PackageManager.PERMISSION_GRANTED
         ) {
-            map.isMyLocationEnabled = true
+            googleMap?.isMyLocationEnabled = true // Use googleMap?.
         }
 
         // Set map type
-        map.mapType = GoogleMap.MAP_TYPE_NORMAL
+        googleMap?.mapType = GoogleMap.MAP_TYPE_NORMAL // Use googleMap?.
 
         // Set default location (San Francisco) if current location is not available
         if (currentLocation == null) {
             val defaultLocation = LatLng(37.7749, -122.4194)
-            map.moveCamera(CameraUpdateFactory.newLatLngZoom(defaultLocation, 10f))
+            googleMap?.moveCamera(CameraUpdateFactory.newLatLngZoom(defaultLocation, 10f)) // Use googleMap?.
         }
     }
 

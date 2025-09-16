@@ -92,6 +92,10 @@ class HomeFragment : Fragment() {
             findNavController().navigate(R.id.action_homeFragment_to_mainMenuFragment)
         }
 
+        binding.buttonProfile.setOnClickListener {
+            findNavController().navigate(R.id.action_homeFragment_to_profileFragment)
+        }
+
         // Update user info display
         updateUI(auth.currentUser)
 
