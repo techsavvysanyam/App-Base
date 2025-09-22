@@ -101,6 +101,7 @@ A comprehensive Android app using Kotlin, AndroidX, ViewBinding, Navigation Comp
 
 ## 📸 Screenshots
 
+<!--suppress ALL -->
 <div style="text-align: center;">
   <img src="screenshots/screen1.jpg" width="200" alt="Home Screen"/>
   <img src="screenshots/screen2.jpg" width="200" alt="Dummy Anonymous Sign-in"/>

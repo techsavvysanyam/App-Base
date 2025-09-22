@@ -1,5 +1,6 @@
 package com.example.appbase
 
+import android.annotation.SuppressLint
 import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -20,6 +21,7 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.coroutines.launch
 
+@Suppress("DEPRECATION")
 class ProfileFragment : Fragment() {
     private var _binding: FragmentProfileBinding? = null
     private val binding get() = _binding!!
@@ -260,6 +262,7 @@ class ProfileFragment : Fragment() {
         }
     }
 
+    @SuppressLint("SetTextI18n")
     private fun updateProfileCompletion(profile: UserProfile) {
         var completion = 0
         val totalFields = 6
@@ -274,15 +277,6 @@ class ProfileFragment : Fragment() {
         val percentage = (completion * 100) / totalFields
         binding.textProfileCompletion.text = "$percentage%"
         binding.progressProfileCompletion.progress = percentage
-        
-        // Update completion text based on percentage
-        val completionText = when {
-            percentage >= 100 -> getString(R.string.profile_completion_100)
-            percentage >= 75 -> getString(R.string.profile_completion_75)
-            percentage >= 50 -> getString(R.string.profile_completion_50)
-            percentage >= 25 -> getString(R.string.profile_completion_25)
-            else -> getString(R.string.profile_completion_0)
-        }
     }
 
     private fun showLoading(show: Boolean, message: String = getString(R.string.loading)) {

@@ -179,7 +179,7 @@
     <string name="profile_completion">Profile Completion</string>
     <string name="actions">Actions</string>
     <string name="preferences">Preferences</string>
-    <string name="loading">Loading...</string>
+    <string name="loading">Loading…</string>
     <string name="online_status">Online</string>
     <string name="offline_status">Offline</string>
     <string name="verified_account">Verified Account</string>
@@ -194,4 +194,8 @@
     <string name="profile_completion_50">50% Complete</string>
     <string name="profile_completion_25">25% Complete</string>
     <string name="profile_completion_0">Complete your profile</string>
+    <string name="profile_picture">Profile Picture</string>
+    <string name="user_name">User Name</string>
+    <string name="user_example_com">user@example.com</string>
+    <string name="_75">75%</string>
 </resources>

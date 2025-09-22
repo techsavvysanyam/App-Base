@@ -42,7 +42,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:orientation="vertical">
+                        android:orientation="vertical"
+                        tools:ignore="UselessParent">
 
                         <!-- Profile Picture with Status Badge -->
                         <FrameLayout
@@ -62,7 +63,7 @@
                                     android:layout_height="match_parent"
                                     android:scaleType="centerCrop"
                                     android:src="@drawable/ic_person_placeholder"
-                                    android:contentDescription="Profile Picture" />
+                                    android:contentDescription="@string/profile_picture" />
 
                             </com.google.android.material.card.MaterialCardView>
 
@@ -107,7 +108,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:gravity="center"
-                        android:orientation="horizontal">
+                        android:orientation="horizontal"
+                        tools:ignore="UseCompoundDrawables">
 
                         <TextView
                             android:id="@+id/textUserName"
@@ -115,7 +117,7 @@
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
                             android:gravity="center"
-                            android:text="User Name"
+                            android:text="@string/user_name"
                             android:textColor="@color/text_primary"
                             android:textSize="24sp"
                             android:textStyle="bold" />
@@ -128,7 +130,7 @@
                             android:layout_marginStart="8dp"
                             android:src="@drawable/ic_verified"
                             android:visibility="gone"
-                            android:contentDescription="Verified Account" />
+                            android:contentDescription="@string/verified_account" />
 
                     </LinearLayout>
 
@@ -138,7 +140,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
                         android:gravity="center"
-                        android:text="user@example.com"
+                        android:text="@string/user_example_com"
                         android:textColor="@color/text_secondary"
                         android:textSize="16sp" />
 
@@ -166,7 +168,7 @@
                                 android:id="@+id/textProfileCompletion"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="75%"
+                                android:text="@string/_75"
                                 android:textColor="@color/primary_color"
                                 android:textSize="14sp"
                                 android:textStyle="bold" />
@@ -214,9 +216,9 @@
                     android:textSize="20sp"
                     android:textStyle="bold"
                     android:layout_marginBottom="20dp"
-                    android:drawableStart="@drawable/ic_edit"
                     android:drawablePadding="8dp"
-                    android:gravity="center_vertical" />
+                    android:gravity="center_vertical"
+                    app:drawableStartCompat="@drawable/ic_edit" />
 
                 <!-- Display Name Field -->
                 <com.google.android.material.textfield.TextInputLayout

@@ -50,12 +50,11 @@ class MainActivity : AppCompatActivity() {
             }
         }
         // Register receiver for FCM messages
-        val receiverNotExported = if (Build.VERSION.SDK_INT >= 33) 2 else 0
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
             registerReceiver(
                 fcmReceiver,
                 IntentFilter(MyFirebaseMessagingService.ACTION_FCM_MESSAGE),
-                Context.RECEIVER_NOT_EXPORTED
+                RECEIVER_NOT_EXPORTED
             )
         } else {
             registerReceiver(fcmReceiver, IntentFilter(MyFirebaseMessagingService.ACTION_FCM_MESSAGE))

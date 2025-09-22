@@ -1,6 +1,5 @@
 package com.example.appbase
 
-import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -12,8 +11,8 @@ import androidx.lifecycle.lifecycleScope
 import com.example.appbase.databinding.FragmentSettingsBinding
 import com.example.appbase.preferences.SettingsDataStore
 import com.example.appbase.utils.LanguageHelper
-import kotlinx.coroutines.launch
 import kotlinx.coroutines.flow.first
+import kotlinx.coroutines.launch
 
 class SettingsFragment : Fragment() {
     
@@ -88,7 +87,7 @@ class SettingsFragment : Fragment() {
         
         // Set up language selection
         binding.languageSpinner.onItemSelectedListener = object : android.widget.AdapterView.OnItemSelectedListener {
-            override fun onItemSelected(parent: android.widget.AdapterView<*>?, view: android.view.View?, position: Int, id: Long) {
+            override fun onItemSelected(parent: android.widget.AdapterView<*>?, view: View?, position: Int, id: Long) {
                 val languages = resources.getStringArray(R.array.language_options)
                 val languageCodes = resources.getStringArray(R.array.language_codes)
                 if (position < languageCodes.size) {

@@ -47,7 +47,4 @@ data class UserProfile(
         )
     }
 
-    fun isValid(): Boolean {
-        return uid.isNotEmpty() && email.isNotEmpty()
-    }
 }
