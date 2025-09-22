@@ -37,6 +37,10 @@ class MainMenuFragment : Fragment() {
             startActivity(intent)
         }
 
+        binding.layoutSettings.setOnClickListener {
+            findNavController().navigate(R.id.action_mainMenuFragment_to_settingsFragment)
+        }
+
         return binding.root
     }
 

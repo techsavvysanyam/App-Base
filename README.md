@@ -1,6 +1,6 @@
 # App Base
 
-A starter Android app using Kotlin, AndroidX, ViewBinding, Navigation Component, and Firebase (Auth + FCM) with Google Sign-In integration.
+A comprehensive Android app using Kotlin, AndroidX, ViewBinding, Navigation Component, and Firebase (Auth + FCM) with Google Sign-In integration. Features AI-powered capabilities including face recognition, object detection, OCR, navigation, and a complete user profile management system with settings and preferences.
 
 ## Setup
 
@@ -35,34 +35,69 @@ A starter Android app using Kotlin, AndroidX, ViewBinding, Navigation Component,
 - **Setup Guide**: See `NAVIGATION_API_SETUP_GUIDE.md` for detailed configuration
 
 ## Features
+
+### Core Architecture
 - Single-Activity architecture with Navigation Component
-- Main Menu with four core feature options (Face Recognition, Object Detection, OCR, Navigation)
-- Sign-In screen with Google authentication
-- User profile display with photo, name, and email
-- Sign-out functionality
+- Material Design 3 UI components with modern theming
+- Responsive layout for different screen sizes
 - Firebase Authentication and Cloud Messaging (FCM) integrated
 - Anonymous authentication support
-- Material Design UI components
-- Responsive layout for different screen sizes
+
+### AI-Powered Features
 - **Face Recognition (ML Kit)**: capture or pick an image, on-device face detection, bounding boxes overlay, face count, and details
+- **Object Detection (ML Kit)**: live camera detection and image-based object detection with confidence scores
 - **OCR (Optical Character Recognition)**: extract text from images using ML Kit Text Recognition API with multi-language support, camera capture, gallery selection, and text sharing capabilities
 - **Navigation (Google Maps)**: full-featured navigation with Google Maps integration, location services, place search, and route planning
 
+### User Profile Management
+- **Enhanced Profile System**: comprehensive user profile with bio, contact info, location, and website
+- **Profile Completion Tracking**: visual progress indicator showing profile completion percentage
+- **Profile Picture Management**: camera capture and gallery selection with real-time updates
+- **Verification System**: account verification status with visual badges
+- **Online Status**: real-time online/offline status indicators
+
+### Settings & Preferences
+- **Theme Management**: dark/light mode with auto theme following system settings
+- **Notification Controls**: granular notification preferences (push, email, master toggle)
+- **Language Selection**: 12 language options with immediate application
+- **Persistent Storage**: DataStore-based preferences that survive app restarts
+- **Real-time Updates**: immediate UI updates when settings change
+
+### User Interface
+- **Modern Design**: gradient headers, card-based layouts, and smooth animations
+- **Intuitive Navigation**: organized action buttons and clear visual hierarchy
+- **Loading States**: professional loading indicators with contextual messages
+- **Error Handling**: user-friendly error messages and recovery options
+
 ## Dependencies
-- AndroidX
-- Kotlin
-- Navigation Component
-- Firebase Auth
-- Firebase Cloud Messaging
-- Google Play Services Auth
-- Glide (for image loading)
-- ML Kit Face Detection (on-device)
-- **ML Kit Text Recognition** (on-device OCR for multiple languages)
-- **CameraX** (camera integration for OCR)
-- **Kotlin Coroutines** (asynchronous OCR processing)
-- **Google Maps SDK** (interactive maps and location services)
-- **Google Places API** (place search and autocomplete)
-- **Google Directions API** (route planning and navigation)
+
+### Core Dependencies
+- **AndroidX**: Modern Android libraries
+- **Kotlin**: Primary programming language
+- **Navigation Component**: Fragment-based navigation
+- **ViewBinding**: Type-safe view binding
+- **Material Design 3**: Modern UI components
+
+### Firebase Integration
+- **Firebase Auth**: User authentication
+- **Firebase Cloud Messaging**: Push notifications
+- **Firebase Firestore**: Cloud database
+- **Firebase Storage**: File storage
+- **Google Play Services Auth**: Google Sign-In
+
+### AI & Machine Learning
+- **ML Kit Face Detection**: On-device face recognition
+- **ML Kit Object Detection**: On-device object detection
+- **ML Kit Text Recognition**: Multi-language OCR
+- **CameraX**: Modern camera integration
+
+### UI & Utilities
+- **Glide**: Image loading and caching
+- **Kotlin Coroutines**: Asynchronous programming
+- **DataStore Preferences**: Modern preference storage
+- **Google Maps SDK**: Interactive maps
+- **Google Places API**: Place search and autocomplete
+- **Google Directions API**: Route planning and navigation
 
 ## 📸 Screenshots
 
@@ -101,6 +136,13 @@ A starter Android app using Kotlin, AndroidX, ViewBinding, Navigation Component,
 <div style="text-align: center;">
   <img src="screenshots/screen15.jpg" width="200" alt="Navigation (Default Location)"/>
   <img src="screenshots/screen16.jpg" width="200" alt="Current user location/>
+</div>
+<div style="text-align: center;">
+  <img src="screenshots/screen17.jpg" width="200" alt="Navigation (Default Location)"/>
+  <img src="screenshots/screen18.jpg" width="200" alt="Current user location/>
+</div>
+<div style="text-align: center;">
+  <img src="screenshots/screen19.jpg" width="200" alt="Navigation (Default Location)"/>
 </div>
 
 ## Usage..
@@ -160,6 +202,54 @@ A starter Android app using Kotlin, AndroidX, ViewBinding, Navigation Component,
 - If search doesn't work, check your Google Maps API key configuration
 - If routes don't display, verify Directions API is enabled in Google Cloud Console
 - For best results, use the app in areas with good GPS signal
+
+### Enhanced Profile Management
+1. **Access Profile**: Navigate to Profile from the Home screen or Main Menu
+2. **View Profile Information**: See your comprehensive profile with completion progress
+3. **Edit Profile Details**: 
+   - **Display Name**: Your primary name
+   - **Bio**: Personal or professional biography
+   - **Phone Number**: Contact information
+   - **Location**: Geographic location
+   - **Website**: Personal or professional website
+4. **Update Profile Picture**: Tap "Change Photo" to capture or select a new image
+5. **Track Progress**: Monitor your profile completion percentage
+6. **Save Changes**: Tap "Save Profile" to update your information
+7. **Sync with Google**: Use "Sync with Google" to update from your Google account
+
+**Features:**
+- **Modern UI**: Gradient header with profile picture and status indicators
+- **Profile Completion**: Visual progress bar showing completion percentage
+- **Verification Badge**: Shows verified account status
+- **Online Status**: Real-time online/offline indicator
+- **Comprehensive Fields**: All necessary profile information in one place
+- **Real-time Updates**: Immediate UI updates when changes are made
+- **Image Management**: Easy profile picture updates with camera or gallery
+
+### Settings & Preferences
+1. **Access Settings**: Navigate to Settings from Profile screen or Main Menu
+2. **Notification Settings**:
+   - **Master Toggle**: Enable/disable all notifications
+   - **Push Notifications**: Control device notifications
+   - **Email Notifications**: Manage email notifications
+3. **Appearance Settings**:
+   - **Auto Theme**: Follow system theme settings
+   - **Dark Theme**: Force dark mode when auto theme is disabled
+4. **Language Settings**:
+   - **Language Selection**: Choose from 12 supported languages
+   - **Immediate Application**: Language changes apply instantly
+5. **About Information**: View app version and description
+
+**Features:**
+- **Persistent Storage**: All settings saved using DataStore
+- **Real-time Updates**: Changes apply immediately
+- **Theme Management**: Seamless dark/light mode switching
+- **Language Support**: 12 languages with proper localization
+- **Organized UI**: Card-based layout with clear sections
+- **User Feedback**: Toast messages confirm changes
+
+**Supported Languages:**
+- English, Spanish, French, German, Chinese, Japanese, Korean, Arabic, Hindi, Portuguese, Russian, Italian
 
 ### Face Recognition
 1. Open the app and navigate to Face Recognition from the Main Menu.
@@ -363,7 +453,96 @@ class DirectionsManager(private val context: Context, private val apiKey: String
 - **Request Validation**: Input sanitization and validation
 - **Error Logging**: Comprehensive logging without sensitive data exposure
 
+## Enhanced Profile & Settings Technical Implementation
+
+### Profile Management Architecture
+- **Fragment-based UI**: `ProfileFragment.kt` handles user interactions and profile display
+- **Data Model**: Enhanced `UserProfile.kt` with comprehensive user information
+- **Repository Pattern**: `ProfileRepository.kt` manages data persistence and Firebase integration
+- **Image Management**: Glide integration for profile picture loading and caching
+
+### Key Profile Components
+
+#### 1. Enhanced User Profile Model
+```kotlin
+data class UserProfile(
+    val uid: String = "",
+    val displayName: String = "",
+    val email: String = "",
+    val photoUrl: String = "",
+    val bio: String? = null,
+    val phoneNumber: String? = null,
+    val location: String? = null,
+    val website: String? = null,
+    val isVerified: Boolean = false,
+    val isOnline: Boolean = false,
+    val createdAt: Long = System.currentTimeMillis(),
+    val updatedAt: Long = System.currentTimeMillis()
+)
+```
+
+#### 2. Profile Completion System
+- **Dynamic Calculation**: Real-time completion percentage based on filled fields
+- **Visual Progress**: Material Design progress indicator with percentage display
+- **Contextual Messages**: Different completion messages based on progress level
+- **Field Validation**: Comprehensive validation for all profile fields
+
+#### 3. Modern UI Components
+- **Gradient Header**: Beautiful gradient background with profile picture
+- **Status Indicators**: Online/offline status and verification badges
+- **Card-based Layout**: Organized sections with Material Design cards
+- **Responsive Design**: Adapts to different screen sizes and orientations
+
+### Settings & Preferences Architecture
+- **DataStore Integration**: `SettingsDataStore.kt` for modern preference storage
+- **Fragment-based UI**: `SettingsFragment.kt` with organized settings sections
+- **Reactive Updates**: Kotlin Flow-based real-time preference updates
+- **Theme Management**: `LanguageHelper.kt` for language and theme management
+
+### Key Settings Components
+
+#### 1. Preference Storage
+```kotlin
+class SettingsDataStore(private val context: Context) {
+    // Notification preferences
+    val notificationsEnabled: Flow<Boolean>
+    val pushNotificationsEnabled: Flow<Boolean>
+    val emailNotificationsEnabled: Flow<Boolean>
+    
+    // Theme preferences
+    val darkThemeEnabled: Flow<Boolean>
+    val autoThemeEnabled: Flow<Boolean>
+    
+    // Language preferences
+    val selectedLanguage: Flow<String>
+}
+```
+
+#### 2. Theme Management
+- **Auto Theme**: Follows system theme settings automatically
+- **Manual Override**: Dark/light mode when auto theme is disabled
+- **Real-time Application**: Immediate theme changes without app restart
+- **Conflict Resolution**: Proper handling of theme conflicts
+
+#### 3. Language Support
+- **12 Languages**: Comprehensive language support with proper localization
+- **Immediate Application**: Language changes apply instantly
+- **Persistent Storage**: Language preferences survive app restarts
+- **Fallback Handling**: Graceful fallback to default language
+
+### Performance Optimizations
+- **Memory Management**: Efficient image loading and caching with Glide
+- **Async Operations**: Coroutine-based profile and settings operations
+- **DataStore Efficiency**: Type-safe preference storage with minimal overhead
+- **UI Optimization**: Smooth animations and transitions
+
+### Error Handling
+- **Profile Errors**: Graceful handling of profile loading and saving failures
+- **Settings Errors**: User-friendly error messages for preference changes
+- **Network Issues**: Offline support and retry mechanisms
+- **Validation Errors**: Clear feedback for invalid input
+
 ---
 
-**Note:** This project is set up for easy extension and task experimentation. 
+**Note:** This project is set up for easy extension and task experimentation. The enhanced profile and settings system provides a solid foundation for building comprehensive user management features. 
 

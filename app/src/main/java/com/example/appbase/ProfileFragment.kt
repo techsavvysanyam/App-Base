@@ -77,6 +77,10 @@ class ProfileFragment : Fragment() {
             syncWithGoogle()
         }
 
+        binding.buttonSettings.setOnClickListener {
+            findNavController().navigate(R.id.action_profile_to_settings)
+        }
+
         binding.buttonSignOut.setOnClickListener {
             signOut()
         }
@@ -120,6 +124,19 @@ class ProfileFragment : Fragment() {
 
         // Fill form fields
         binding.editTextDisplayName.setText(profile.displayName)
+        binding.editTextBio.setText(profile.bio ?: "")
+        binding.editTextPhone.setText(profile.phoneNumber ?: "")
+        binding.editTextLocation.setText(profile.location ?: "")
+        binding.editTextWebsite.setText(profile.website ?: "")
+
+        // Update profile completion
+        updateProfileCompletion(profile)
+        
+        // Show verification badge if verified
+        binding.verificationBadge.visibility = if (profile.isVerified) View.VISIBLE else View.GONE
+        
+        // Update online status (simplified for demo)
+        binding.statusIndicator.visibility = View.VISIBLE
     }
 
     private fun openImagePicker() {
@@ -175,10 +192,14 @@ class ProfileFragment : Fragment() {
 
         val updatedProfile = profile.copy(
             displayName = binding.editTextDisplayName.text.toString().trim(),
+            bio = binding.editTextBio.text.toString().trim(),
+            phoneNumber = binding.editTextPhone.text.toString().trim(),
+            location = binding.editTextLocation.text.toString().trim(),
+            website = binding.editTextWebsite.text.toString().trim(),
             updatedAt = System.currentTimeMillis()
         )
 
-        showLoading(true)
+        showLoading(true, getString(R.string.profile_updated))
 
         lifecycleScope.launch {
             try {
@@ -186,14 +207,15 @@ class ProfileFragment : Fragment() {
                 result.fold(
                     onSuccess = { savedProfile ->
                         currentProfile = savedProfile
-                        showSuccess(getString(R.string.profile_saved))
+                        updateProfileCompletion(savedProfile)
+                        showSuccess(getString(R.string.profile_updated))
                     },
                     onFailure = { error ->
-                        showError("${getString(R.string.profile_save_error)}: ${error.message}")
+                        showError("${getString(R.string.profile_update_failed)}: ${error.message}")
                     }
                 )
             } catch (e: Exception) {
-                showError("${getString(R.string.profile_save_error)}: ${e.message}")
+                showError("${getString(R.string.profile_update_failed)}: ${e.message}")
             } finally {
                 showLoading(false)
             }
@@ -238,12 +260,39 @@ class ProfileFragment : Fragment() {
         }
     }
 
-    private fun showLoading(show: Boolean) {
-        binding.progressBar.visibility = if (show) View.VISIBLE else View.GONE
+    private fun updateProfileCompletion(profile: UserProfile) {
+        var completion = 0
+        val totalFields = 6
+        
+        if (profile.displayName.isNotEmpty()) completion++
+        if (profile.bio?.isNotEmpty() == true) completion++
+        if (profile.phoneNumber?.isNotEmpty() == true) completion++
+        if (profile.location?.isNotEmpty() == true) completion++
+        if (profile.website?.isNotEmpty() == true) completion++
+        if (profile.photoUrl.isNotEmpty()) completion++
+        
+        val percentage = (completion * 100) / totalFields
+        binding.textProfileCompletion.text = "$percentage%"
+        binding.progressProfileCompletion.progress = percentage
+        
+        // Update completion text based on percentage
+        val completionText = when {
+            percentage >= 100 -> getString(R.string.profile_completion_100)
+            percentage >= 75 -> getString(R.string.profile_completion_75)
+            percentage >= 50 -> getString(R.string.profile_completion_50)
+            percentage >= 25 -> getString(R.string.profile_completion_25)
+            else -> getString(R.string.profile_completion_0)
+        }
+    }
+
+    private fun showLoading(show: Boolean, message: String = getString(R.string.loading)) {
+        binding.cardLoading.visibility = if (show) View.VISIBLE else View.GONE
+        binding.textLoadingMessage.text = message
         binding.buttonSaveProfile.isEnabled = !show
         binding.buttonSyncGoogle.isEnabled = !show
         binding.buttonSignOut.isEnabled = !show
         binding.buttonChangePhoto.isEnabled = !show
+        binding.buttonSettings.isEnabled = !show
     }
 
     private fun showSuccess(message: String) {

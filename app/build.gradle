@@ -92,6 +92,9 @@ dependencies {
     implementation libs.coroutines.core
     implementation libs.coroutines.android
     
+    // DataStore for preferences
+    implementation 'androidx.datastore:datastore-preferences:1.0.0'
+    
     // CameraX for camera functionality
     implementation libs.camerax.core
     implementation libs.camerax.camera2

@@ -25,6 +25,9 @@
         <action
             android:id="@+id/action_mainMenuFragment_to_ocrFragment"
             app:destination="@id/ocrFragment" />
+        <action
+            android:id="@+id/action_mainMenuFragment_to_settingsFragment"
+            app:destination="@id/settingsFragment" />
 
     </fragment>
 
@@ -81,7 +84,16 @@
         <action
             android:id="@+id/action_profile_to_signIn"
             app:destination="@id/signInFragment" />
+        <action
+            android:id="@+id/action_profile_to_settings"
+            app:destination="@id/settingsFragment" />
 
     </fragment>
+
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.example.appbase.SettingsFragment"
+        android:label="@string/settings_title"
+        tools:layout="@layout/fragment_settings" />
 
 </navigation>

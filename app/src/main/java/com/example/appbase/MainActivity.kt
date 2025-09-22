@@ -18,15 +18,26 @@ import android.Manifest
 import android.content.pm.PackageManager
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.content.ContextCompat
+import androidx.appcompat.app.AppCompatDelegate
+import androidx.lifecycle.lifecycleScope
+import com.example.appbase.preferences.SettingsDataStore
+import com.example.appbase.utils.LanguageHelper
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.flow.first
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
+    private lateinit var settingsDataStore: SettingsDataStore
 
     @SuppressLint("UnspecifiedRegisterReceiverFlag")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        
+        // Initialize settings data store
+        settingsDataStore = SettingsDataStore(this)
+        applySettings()
 
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         val navController = navHostFragment.navController
@@ -83,6 +94,32 @@ class MainActivity : AppCompatActivity() {
     override fun onDestroy() {
         super.onDestroy()
         unregisterReceiver(fcmReceiver)
+    }
+
+    private fun applySettings() {
+        lifecycleScope.launch {
+            // Apply language settings
+            val selectedLanguage = settingsDataStore.selectedLanguage.first()
+            if (selectedLanguage != "en") {
+                LanguageHelper.applyLanguage(this@MainActivity, selectedLanguage)
+            }
+            
+            // Apply theme settings
+            settingsDataStore.autoThemeEnabled.collect { autoThemeEnabled ->
+                if (autoThemeEnabled) {
+                    AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
+                } else {
+                    // Only apply dark theme when auto theme is disabled
+                    val darkThemeEnabled = settingsDataStore.darkThemeEnabled.first()
+                    val nightMode = if (darkThemeEnabled) {
+                        AppCompatDelegate.MODE_NIGHT_YES
+                    } else {
+                        AppCompatDelegate.MODE_NIGHT_NO
+                    }
+                    AppCompatDelegate.setDefaultNightMode(nightMode)
+                }
+            }
+        }
     }
 
     override fun onSupportNavigateUp(): Boolean {

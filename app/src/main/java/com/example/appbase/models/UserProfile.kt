@@ -9,6 +9,12 @@ data class UserProfile(
     val displayName: String = "",
     val email: String = "",
     val photoUrl: String = "",
+    val bio: String? = null,
+    val phoneNumber: String? = null,
+    val location: String? = null,
+    val website: String? = null,
+    val isVerified: Boolean = false,
+    val isOnline: Boolean = false,
     val createdAt: Long = System.currentTimeMillis(),
     val updatedAt: Long = System.currentTimeMillis()
 ) : Parcelable {
@@ -30,6 +36,12 @@ data class UserProfile(
             "displayName" to displayName,
             "email" to email,
             "photoUrl" to photoUrl,
+            "bio" to (bio ?: ""),
+            "phoneNumber" to (phoneNumber ?: ""),
+            "location" to (location ?: ""),
+            "website" to (website ?: ""),
+            "isVerified" to isVerified,
+            "isOnline" to isOnline,
             "createdAt" to createdAt,
             "updatedAt" to updatedAt
         )
